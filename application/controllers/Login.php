@@ -19,12 +19,13 @@ class Login extends CI_Controller{
         $validate = $this->M_Login->validate($email,$password);
         if($validate->num_rows() > 0){
             $data  = $validate->row_array();
-            $name  = $data['nama_pengguna'];
             $email = $data['email_pengguna'];
+            $password = $data['kata_sandi'];
             $status = $data['status_pengguna'];
             $sesdata = array(
-                'nama_pengguna'         => $name,
+                
                 'email_pengguna'        => $email,
+                'kata_sandi'            => $password,
                 'status_pengguna'       => $status,
                 'logged_in' => TRUE
             );
@@ -34,11 +35,11 @@ class Login extends CI_Controller{
                 redirect('page');
     
             // access login for tour guide
-            }elseif($status === 'Tourguide'){
+            }else if($status === 'Tourguide'){
                 redirect('page/tourguide');
     
             // access login for customer
-            }else{
+            }else {
                 redirect('page/customer');
             }
         }

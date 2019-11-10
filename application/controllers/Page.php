@@ -10,7 +10,7 @@ class Page extends CI_Controller{
   function index(){
     
       if($this->session->userdata('status_pengguna')==='Admin'){
-          $this->load->view('Admin');
+          $this->load->view('V_Admin');//blm diganti
       }else{
           echo "Access Denied";
       }
@@ -20,7 +20,7 @@ class Page extends CI_Controller{
   function tourguide(){
   
     if($this->session->userdata('status_pengguna')==='Tourguide'){
-      $this->load->view('dashboard_view');
+      $this->load->view('dashboard_view');//blm diganti
     }else{
         echo "Access Denied";
     }
@@ -29,7 +29,7 @@ class Page extends CI_Controller{
   function customer(){
    
     if($this->session->userdata('status_pengguna')==='Customer'){
-      $this->load->view('dashboard_view');
+      $this->load->view('dashboard_view');//blm diganti
     }else{
         echo "Access Denied";
     }
