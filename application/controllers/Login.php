@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//hello
+
 class Login extends CI_Controller{
 
     function __construct(){
@@ -16,7 +16,7 @@ class Login extends CI_Controller{
     function auth(){
         $email    = $this->input->post('email_pengguna',TRUE);
         $password = md5($this->input->post('kata_sandi',TRUE));
-        $validate = $this->login_model->validate($email,$password);
+        $validate = $this->M_Login->validate($email,$password);
         if($validate->num_rows() > 0){
             $data  = $validate->row_array();
             $name  = $data['nama_pengguna'];
@@ -30,16 +30,16 @@ class Login extends CI_Controller{
             );
             $this->session->set_userdata($sesdata);
             // access login for admin
-            if($status === '1'){
+            if($status === 'Admin'){
                 redirect('page');
     
             // access login for tour guide
-            }elseif($status === '2'){
-                redirect('page/staff');
+            }elseif($status === 'Tourguide'){
+                redirect('page/tourguide');
     
             // access login for customer
             }else{
-                redirect('page/author');
+                redirect('page/customer');
             }
         }
         

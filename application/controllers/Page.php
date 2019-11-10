@@ -8,8 +8,8 @@ class Page extends CI_Controller{
   }
 
   function index(){
-    //Allowing akses to admin only
-      if($this->session->userdata('status')==='1'){
+    
+      if($this->session->userdata('status_pengguna')==='Admin'){
           $this->load->view('Admin');
       }else{
           echo "Access Denied";
@@ -17,18 +17,18 @@ class Page extends CI_Controller{
 
   }
 
-  function staff(){
-    //Allowing akses to staff only
-    if($this->session->userdata('status')==='2'){
+  function tourguide(){
+  
+    if($this->session->userdata('status_pengguna')==='Tourguide'){
       $this->load->view('dashboard_view');
     }else{
         echo "Access Denied";
     }
   }
 
-  function author(){
-    //Allowing akses to author only
-    if($this->session->userdata('status')==='3'){
+  function customer(){
+   
+    if($this->session->userdata('status_pengguna')==='Customer'){
       $this->load->view('dashboard_view');
     }else{
         echo "Access Denied";

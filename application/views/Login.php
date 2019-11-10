@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="<?php echo site_url('login/auth');?>" method="post">
 					<span class="login100-form-title p-b-43">
 					<img src="<?=base_url()?>/asset/images/icon/explore.png">
 					</span>
@@ -65,7 +65,8 @@
 							or sign up using
 						</span>
 					</div>
-
+					<!--messages-->
+					<?php echo $this->session->flashdata('msg');?>
 					
 				</form>
 
