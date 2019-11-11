@@ -16,7 +16,12 @@ class Login extends CI_Controller{
     function auth(){
         $email    = $this->input->post('email_pengguna',TRUE);
         $password = md5($this->input->post('kata_sandi',TRUE));
-        $validate = $this->M_Login->validate($email,$password);
+        $where=array(
+            'email_pengguna' =>$email,
+            'kata_sandi'     =>$password
+        );
+
+        $validate = $this->M_Login->check_user('pengguna',$where);
         if($validate->num_rows() > 0){
             $data  = $validate->row_array();
             $email = $data['email_pengguna'];
@@ -40,7 +45,7 @@ class Login extends CI_Controller{
     
             // access login for customer
             }else {
-                redirect('page/customer');
+                redirect($status);
             }
         }
         
