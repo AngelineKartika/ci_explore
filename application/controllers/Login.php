@@ -5,7 +5,7 @@ class Login extends CI_Controller{
 
     function __construct(){
         parent::__construct();
-        $this->load->model('M_Login');
+        $this->load->model(array('M_Login', 'M_Admin'));
     }
 
      function index()
@@ -14,16 +14,19 @@ class Login extends CI_Controller{
     }
 
     function auth(){
-        $email    = $this->input->post('email_pengguna',TRUE);
+        $email    = $this->input->post('email_pengguna',TRUE);//form
         $password = md5($this->input->post('kata_sandi',TRUE));
+
         $where=array(
             'email_pengguna' =>$email,
             'kata_sandi'     =>$password
         );
-
-        $validate = $this->M_Login->check_user('pengguna',$where);
-        if($validate->num_rows() > 0){
-            $data  = $validate->row_array();
+        
+        $baris = $this->M_Login->check_user('pengguna',$where)->num_rows();
+        
+        if($baris > 0){
+            $data = $this->M_Login->check_user('pengguna',$where)->row_array();
+       
             $email = $data['email_pengguna'];
             $password = $data['kata_sandi'];
             $status = $data['status_pengguna'];
@@ -36,6 +39,7 @@ class Login extends CI_Controller{
             );
             $this->session->set_userdata($sesdata);
             // access login for admin
+        
             if($status === 'Admin'){
                 redirect('page');
     

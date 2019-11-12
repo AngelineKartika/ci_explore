@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="<?= base_url('login/auth');?>" method="post">
+				<form class="login100-form validate-form" action="<?= base_url('Login/auth');?>" method="POST">
 					<span class="login100-form-title p-b-43">
 					<img src="<?=base_url()?>/asset/images/icon/explore.png">
 					</span>
