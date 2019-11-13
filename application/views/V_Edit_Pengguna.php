@@ -374,9 +374,9 @@
                                       <div class="form-group">
                                           <label for="vat" class=" form-control-label">Status</label>
                                             <select name = "status" class="form-control">
-                                              <option value = Customer> Customer</option>
-                                              <option value = Tourguide> Tourguide</option>
-                                              <option value = Admin> Admin</option>
+                                              <option value = Customer <?php if($a->status_pengguna=="Customer") {echo "selected";}?>>Customer</option>
+                                              <option value = Tourguide <?php if($a->status_pengguna=="Tourguide") {echo "selected";}?>> Tourguide</option>
+                                              <option value = Admin <?php if($a->status_pengguna=="Admin") {echo "selected";}?>> Admin</option>
                                             </select>
                                       </div>
                                     

@@ -44,8 +44,6 @@ class Pengguna extends CI_Controller{
                 );
 
         $this->M_Pengguna->insertTable('pengguna',$data);
-
-
         redirect('Pengguna');
     }
 
@@ -59,7 +57,7 @@ class Pengguna extends CI_Controller{
     public function UpdateData(){
       $tangkapId      = $this->input->post('id');
       $tangkapNama    = $this->input->post('nama');
-      $tangkapPass    =$this->input->post('pass');
+      //$tangkapPass    =$this->input->post('pass');
       $tangkapEmail   =$this->input->post('email');
       $tangkapAlamat  =$this->input->post('alamat');
       $tangkapTelp    =$this->input->post('telp');
@@ -69,7 +67,7 @@ class Pengguna extends CI_Controller{
       $data = array (
         'id_pengguna'       => $tangkapId,
         'nama_pengguna'     => $tangkapNama,
-        'kata_sandi'        => $tangkapPass,
+        //'kata_sandi'        => $tangkapPass,
         'email_pengguna'    => $tangkapEmail,
         'alamat_pengguna'   => $tangkapAlamat,
         'telp_pengguna'     => $tangkapTelp,

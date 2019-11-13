@@ -48,8 +48,12 @@ class Login extends CI_Controller{
             // access login for tour guide
             }else if($status === 'Tourguide'){
                 redirect('page/tourguide');
-    
+                
             // access login for customer
+            }else if($status === 'Customer'){
+                redirect('page/customer');
+    
+            
             }else {
                 redirect($status);
             }
