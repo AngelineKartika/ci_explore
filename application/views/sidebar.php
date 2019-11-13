@@ -36,8 +36,8 @@
                 </li>
                 
                 <li>
-                    <a href="chart.html">
-                        <i class="fas fa-chart-bar"></i>Charts</a>
+                    <a href="http://localhost/explore/ci_explore/Pesan">
+                        <i class="fas fa-envelope"></i>Pesan</a>
                 </li>
                 <li>
                     <a href="table.html">

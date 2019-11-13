@@ -26,12 +26,14 @@ class Login extends CI_Controller{
         
         if($baris > 0){
             $data = $this->M_Login->check_user('pengguna',$where)->row_array();
-       
+            
+            $nama=$data['nama_pengguna'];
             $email = $data['email_pengguna'];
             $password = $data['kata_sandi'];
             $status = $data['status_pengguna'];
+            
             $sesdata = array(
-                
+                'nama_pengguna'         =>$nama,
                 'email_pengguna'        => $email,
                 'kata_sandi'            => $password,
                 'status_pengguna'       => $status,

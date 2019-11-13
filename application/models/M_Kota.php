@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_Kota extends CI_Model{
 
 function tampilkanData(){
-  $query = $this->db->get('kota');// dosen = nama table
+  $query = $this->db->get('kota');
   return $query;
 }
 
