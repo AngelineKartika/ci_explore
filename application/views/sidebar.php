@@ -23,12 +23,6 @@
                         <li>
                             <a href="http://localhost/explore/ci_explore/Admin">Admin</a>
                         </li>
-                    </ul>
-                </li>
-                <li class="active has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>Tour</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                           <a href="http://localhost/explore/ci_explore/Kota">Kota</a>
                         </li>
@@ -38,11 +32,9 @@
                         <li>
                             <a href="http://localhost/explore/ci_explore/Promo">Promo</a>
                         </li>
-                        <li>
-                            <a href="index4.html">Dashboard 4</a>
-                        </li>
                     </ul>
                 </li>
+                
                 <li>
                     <a href="chart.html">
                         <i class="fas fa-chart-bar"></i>Charts</a>
