@@ -22,7 +22,7 @@ class Admin extends CI_Controller{
     {
       $data['admin'] = $this->M_Admin->tampilkanData()->result();
       $data['pengguna'] = $this->M_Pengguna->tampilkanData()->result();
-      $this->load->view('V_Input_Pengguna',$data);
+      $this->load->view('V_Input_Admin',$data);
     }
 
     function insertData()

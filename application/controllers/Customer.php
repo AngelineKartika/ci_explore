@@ -6,14 +6,13 @@ class Customer extends CI_Controller{
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('M_Customer','M_Pengguna','M_Promo'));
+        $this->load->model(array('M_Customer','M_Pengguna'));
     }
 
      function index()
     {
       $data['customer'] = $this->M_Customer->tampilkanData()->result();
       $data['pengguna'] = $this->M_Customer->tampilkanData()->result();
-      $data['promo'] = $this->M_Promo->tampilkanData()->result();
       $this->load->view('V_Customer',$data);
 
     }
