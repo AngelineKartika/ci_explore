@@ -15,13 +15,13 @@
                           <a href="http://localhost/explore/ci_explore/Pengguna">Pengguna</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Customer">Customer</a>
+                            <a href="http://localhost/explore/ci_explore/Admin">Admin</a>
                         </li>
                         <li>
                             <a href="http://localhost/explore/ci_explore/Tourguide">Tourguide</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Admin">Admin</a>
+                            <a href="http://localhost/explore/ci_explore/Customer">Customer</a>
                         </li>
                         <li>
                           <a href="http://localhost/explore/ci_explore/Kota">Kota</a>
