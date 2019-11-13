@@ -377,24 +377,24 @@
           <div class="col-md-7 heading-section text-center ftco-animate">
             <span class="subheading">Contact</span>
             <h2 class="mb-4">Contact Us</h2>
-            <p>Far far away, behind the word mountains, far from the countries</p>
+            <p>Your feedback makes us better every day</p>
           </div>
         </div>
 
         <div class="row block-9" style="padding-bottom: 50px;">
           <div class="col-md-7 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form" >
+		  <form action="<?php echo base_url().'Home/insertTable';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Your Name" name="nama">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" placeholder="Your Email" name="email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" placeholder="Subject" name="topik">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

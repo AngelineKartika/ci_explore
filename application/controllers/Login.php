@@ -5,7 +5,7 @@ class Login extends CI_Controller{
 
     function __construct(){
         parent::__construct();
-        $this->load->model(array('M_Login', 'M_Admin'));
+        $this->load->model(array('M_Login', 'M_Admin','M_Tourguide'));
     }
 
      function index()

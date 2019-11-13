@@ -12,16 +12,16 @@
                         <i class="fas fa-tachometer-alt"></i>Master Data</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                          <a href="http://localhost/ci_explore/Pengguna">Pengguna</a>
+                          <a href="http://localhost/explore/ci_explore/Pengguna">Pengguna</a>
                         </li>
                         <li>
-                            <a href="http://localhost/ci_explore/Customer">Customer</a>
+                            <a href="http://localhost/explore/ci_explore/Customer">Customer</a>
                         </li>
                         <li>
-                            <a href="http://localhost/ci_explore/Tourguide">Tourguide</a>
+                            <a href="http://localhost/explore/ci_explore/Tourguide">Tourguide</a>
                         </li>
                         <li>
-                            <a href="http://localhost/ci_explore/Admin">Admin</a>
+                            <a href="http://localhost/explore/ci_explore/Admin">Admin</a>
                         </li>
                     </ul>
                 </li>
@@ -30,13 +30,13 @@
                         <i class="fas fa-tachometer-alt"></i>Tour</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                          <a href="http://localhost/ci_explore/Kota">Kota</a>
+                          <a href="http://localhost/explore/ci_explore/Kota">Kota</a>
                         </li>
                         <li>
-                            <a href="http://localhost/ci_explore/Destinasi">Destinasi</a>
+                            <a href="http://localhost/explore/ci_explore/Destinasi">Destinasi</a>
                         </li>
                         <li>
-                            <a href="http://localhost/ci_explore/Promo">Promo</a>
+                            <a href="http://localhost/explore/ci_explore/Promo">Promo</a>
                         </li>
                         <li>
                             <a href="index4.html">Dashboard 4</a>
