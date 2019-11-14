@@ -31,27 +31,8 @@ class Home extends CI_Controller{
 
             );
 
-             $this->M_Contact->insertTable('pesan',$data);
-
-             //email
-
-             $from_email = $this->input->post('email');
-             $to_email = "angelinekartikaa@gmail.com";
-             //Load email library
-             $this->load->library('email');
-             $this->email->from($from_email, 'Identification');
-             $this->email->to($to_email);
-             $this->email->subject('Send Email Codeigniter');
-             $this->email->message('The email send using codeigniter library');
-             //Send mail
-             if($this->email->send())
-                 $this->session->set_flashdata("email_sent","Congratulation Email Send Successfully.");
-             else
-                 $this->session->set_flashdata("email_sent","You have encountered an error");
-                 $this->load->view('contact_email_form');
-
+            $this->M_Contact->insertTable('pesan',$data);
             //email
-
             redirect('#contact-section');
 
       }

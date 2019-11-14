@@ -198,8 +198,8 @@
 
 
                                               <td>
-                                                <a href="<?php echo base_url().'Pengguna/EditData/'.$a->id_pengguna;?>"><button type="button" class="btn btn-warning" >Edit</button></a>
-                                                <a href="<?php echo base_url().'Pengguna/hapusData/'.$a->id_pengguna;?>"><button type="button" class="btn btn-danger" >Hapus</button></a>
+                                                <a href="<?php echo base_url().'Pengguna/EditData/'.$a->id_pengguna;?>"><button type="button" class="btn btn-warning" data-toggle="tooltip" title="Edit" ><i class="fas fa-edit"></i></button></a>
+                                                <a href="<?php echo base_url().'Pengguna/hapusData/'.$a->id_pengguna;?>"><button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></button></a>
 
                                               </td>
 
