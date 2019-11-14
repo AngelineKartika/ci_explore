@@ -191,7 +191,7 @@
                                                   {
                                               ?>
 
-                                              <option value = "<?php echo $a->id_kota ?>">
+                                              <option value = "<?php echo $list->id_kota ?>" <?php echo ($list->id_kota == $a->id_kota) ? "selected" : "" ?>>
                                                   <?php echo $list->id_kota . " - " . $list->nama_kota?>
                                               </option>
                                               
