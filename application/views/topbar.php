@@ -129,7 +129,17 @@
                                             <img src="<?=base_url()?>asset/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><?php 
+                                                            if($this->session->userdata("logged_in")){?><span>
+                                                                <?php
+                                                                echo $this->session->userdata("nama_pengguna");
+                                                            }
+                                                            else{
+                                                                ?><span>
+                                                                <?php	
+                                                                echo "Username";
+                                                            } 
+					                                    ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -140,9 +150,30 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">
+                                                        <?php 
+                                                            if($this->session->userdata("logged_in")){?><span>
+                                                                <?php
+                                                                echo $this->session->userdata("nama_pengguna");
+                                                            }
+                                                            else{
+                                                                ?><span>
+                                                                <?php	
+                                                                echo "Username";
+                                                            } 
+					                                    ?></a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email"><?php 
+                                                            if($this->session->userdata("logged_in")){?><span>
+                                                                <?php
+                                                                echo $this->session->userdata("email_pengguna");
+                                                            }
+                                                            else{
+                                                                ?><span>
+                                                                <?php	
+                                                                echo "Email";
+                                                            } 
+					                                    ?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -160,8 +191,9 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <a href="<?=base_url('Login/logout')?>">
+                                                    <i class="zmdi zmdi-power"></i>Logout
+                                                    </a>
                                             </div>
                                         </div>
                                     </div>

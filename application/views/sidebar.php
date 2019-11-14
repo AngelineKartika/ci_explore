@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="#">
+        <a href="<?=base_url()?>Home">
             <img src="<?=base_url();?>asset/images/icon/explore.png" alt="Cool Admin" />
         </a>
     </div>
@@ -12,31 +12,31 @@
                         <i class="fas fa-tachometer-alt"></i>Master Data</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                          <a href="http://localhost/explore/ci_explore/Pengguna">Pengguna</a>
+                          <a href="<?=base_url()?>Pengguna">Pengguna</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Admin">Admin</a>
+                            <a href="<?=base_url()?>Admin">Admin</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Tourguide">Tourguide</a>
+                            <a href="<?=base_url()?>Tourguide">Tourguide</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Customer">Customer</a>
+                            <a href="<?=base_url()?>Customer">Customer</a>
                         </li>
                         <li>
-                          <a href="http://localhost/explore/ci_explore/Kota">Kota</a>
+                          <a href="<?=base_url()?>Kota">Kota</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Destinasi">Destinasi</a>
+                            <a href="<?=base_url()?>Destinasi">Destinasi</a>
                         </li>
                         <li>
-                            <a href="http://localhost/explore/ci_explore/Promo">Promo</a>
+                            <a href="<?=base_url()?>Promo">Promo</a>
                         </li>
                     </ul>
                 </li>
                 
                 <li>
-                    <a href="http://localhost/explore/ci_explore/Pesan">
+                    <a href="<?=base_url()?>Pesan">
                         <i class="fas fa-envelope"></i>Pesan</a>
                 </li>
                 <li>

@@ -47,11 +47,11 @@ class Login extends CI_Controller{
     
             // access login for tour guide
             }else if($status === 'Tourguide'){
-                redirect('page/tourguide');
+                redirect('page');
                 
             // access login for customer
             }else if($status === 'Customer'){
-                redirect('page/customer');
+                redirect('page');
     
             
             }else {
@@ -67,7 +67,7 @@ class Login extends CI_Controller{
     
       function logout(){
           $this->session->sess_destroy();
-          redirect('login');
+          redirect('home');
       }
 
 }
