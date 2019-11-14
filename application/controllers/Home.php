@@ -32,6 +32,7 @@ class Home extends CI_Controller{
             );
   
             $this->M_Contact->insertTable('pesan',$data);
+            //email
             redirect('#contact-section');
   
       }

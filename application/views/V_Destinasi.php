@@ -195,8 +195,8 @@
                                               <td><?php echo $a -> nama_destinasi?></td>
                                               <td>
 
-                                                <a href="<?php echo base_url().'Destinasi/EditData/'.$a->id_destinasi;?>"><button type="button" class="btn btn-warning">Edit</button> </a>
-                                                <a href="<?php echo base_url().'Destinasi/hapusData/'.$a->id_destinasi;?>"><button type="button" class="btn btn-danger">Hapus</button> </a>
+                                                <a href="<?php echo base_url().'Destinasi/EditData/'.$a->id_destinasi;?>"><button type="button" class="btn btn-warning" data-toggle="tooltip" title="Edit" ><i class="fas fa-edit"></i></button> </a>
+                                                <a href="<?php echo base_url().'Destinasi/hapusData/'.$a->id_destinasi;?>"><button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete" ><i class="fas fa-trash-alt"></i></button> </a>
 
                                               </td>
 

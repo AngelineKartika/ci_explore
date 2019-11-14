@@ -196,7 +196,7 @@
 
                                               <td>
 
-                                                <a href="<?php echo base_url().'Pesan/hapusData/'.$a->id_pesan;?>"><button type="button" class="btn btn-danger">Hapus</button> </a>
+                                                <a href="<?php echo base_url().'Pesan/hapusData/'.$a->id_pesan;?>"><button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete"><i class="fas fa-trash-alt"></i></button></a>
 
                                               </td>
 
