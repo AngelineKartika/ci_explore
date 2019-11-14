@@ -145,7 +145,7 @@
 		        					<label for="#">Date of the trip</label>
 		        					<div class="form-field">
 		          					<div class="icon"><span class="ion-ios-calendar"></span></div>
-				                <input type="text" class="form-control checkin_date" placeholder="Check In Date">
+				                <input type="text"class="form-control checkin_date" placeholder="Check In Date">
 				              </div>
 			              </div>
 		        			</div>
