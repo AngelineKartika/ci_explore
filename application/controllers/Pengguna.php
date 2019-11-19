@@ -30,6 +30,7 @@ class Pengguna extends CI_Controller{
         $tangkapEmail   =$this->input->post('email');
         $tangkapAlamat  =$this->input->post('alamat');
         $tangkapTelp    =$this->input->post('telp');
+        $tangkapJK      =$this->input->post('jk');
         $tangkapStatus  =$this->input->post('status');
 
 
@@ -40,6 +41,7 @@ class Pengguna extends CI_Controller{
             'email_pengguna'    => $tangkapEmail,
             'alamat_pengguna'   => $tangkapAlamat,
             'telp_pengguna'     => $tangkapTelp,
+            'jenis_kelamin'     => $tangkapJK,
             'status_pengguna'   => $tangkapStatus
                 );
 
@@ -61,6 +63,7 @@ class Pengguna extends CI_Controller{
       $tangkapEmail   =$this->input->post('email');
       $tangkapAlamat  =$this->input->post('alamat');
       $tangkapTelp    =$this->input->post('telp');
+      $tangkapJK      =$this->input->post('jk');
       $tangkapStatus  =$this->input->post('status');
 
 
@@ -71,6 +74,7 @@ class Pengguna extends CI_Controller{
         'email_pengguna'    => $tangkapEmail,
         'alamat_pengguna'   => $tangkapAlamat,
         'telp_pengguna'     => $tangkapTelp,
+        'jenis_kelamin'     => $tangkapJK,
         'status_pengguna'   => $tangkapStatus
 
       );

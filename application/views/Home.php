@@ -40,7 +40,8 @@
 	          <li class="nav-item"><a href="#destination-section" class="nav-link"><span>Destination</span></a></li>
 	          <li class="nav-item" style="padding-right:12px"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
               <li class="nav-item">
-					
+			  		
+
 					<?php 
 						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Page')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
 							<?php
@@ -475,54 +476,9 @@
 
 
 
-		<section class="ftco-gallery">
-    	<div class="container-fluid px-0">
-    		<div class="row no-gutters">
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-1.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-2.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-4.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-5.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-5.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-lg-2 ftco-animate">
-						<a href="<?=base_url()?>/asset2/images/gallery-6.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(<?=base_url()?>/asset2/images/gallery-6.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
+		
+
+
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">

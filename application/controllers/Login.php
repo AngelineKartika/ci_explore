@@ -30,12 +30,14 @@ class Login extends CI_Controller{
             $nama=$data['nama_pengguna'];
             $email = $data['email_pengguna'];
             $password = $data['kata_sandi'];
+            $jeniskelamin = $data['jenis_kelamin'];
             $status = $data['status_pengguna'];
             
             $sesdata = array(
                 'nama_pengguna'         =>$nama,
                 'email_pengguna'        => $email,
                 'kata_sandi'            => $password,
+                'jenis_kelamin'         => $jeniskelamin,    
                 'status_pengguna'       => $status,
                 'logged_in' => TRUE
             );

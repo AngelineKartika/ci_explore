@@ -210,6 +210,10 @@
                                           <input type="text" id="vat" class="form-control" name="telp">
                                       </div>
                                       <div class="form-group">
+                                          <label for="vat" class=" form-control-label">Jenis Kelamin</label>
+                                          <input type="text" id="vat" class="form-control" name="jk">
+                                      </div>
+                                      <div class="form-group">
                                           <label for="vat" class=" form-control-label">Status</label>
                                           <select name = "status" class="form-control">
                                             <option value = "Customer" on> Customer</option>

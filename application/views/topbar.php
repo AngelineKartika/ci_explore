@@ -126,7 +126,26 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?=base_url()?>asset/images/icon/avatar-01.jpg" alt="John Doe" />
+                                        
+                                                    <?php
+                                                        if($this->session->userdata("logged_in")){?>
+                                                        <span>
+                                                        <?php
+                                                                if($this->session->userdata("jenis_kelamin") == "p"){?>
+                                                                    <?php
+                                                                    echo "<img src='".base_url()."asset/images/icon/female.png' />";
+                                                                }               
+                                                                else{
+                                                                    ?>
+                                                                    <?php
+                                                                    echo "<img src='".base_url()."asset/images/icon/male.png' />";
+                                                                }
+                                                            }
+                                                        ?>
+                                                       
+                                                        <span>
+                                                        
+                                                        
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php 
@@ -145,12 +164,27 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="<?=base_url()?>asset/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    <?php
+                                                        if($this->session->userdata("logged_in")){?>
+                                                        <span>
+                                                        <?php
+                                                                if($this->session->userdata("jenis_kelamin") == "p"){?>
+                                                                    <?php
+                                                                    echo "<img src='".base_url()."asset/images/icon/female.png' />";
+                                                                }               
+                                                                else{
+                                                                    ?>
+                                                                    <?php
+                                                                    echo "<img src='".base_url()."asset/images/icon/male.png' />";
+                                                                }
+                                                            }
+                                                        ?>
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#">
+                                                        
                                                         <?php 
                                                             if($this->session->userdata("logged_in")){?><span>
                                                                 <?php
@@ -162,7 +196,22 @@
                                                                 echo "Username";
                                                             } 
 					                                    ?></a>
+                                                        
+                                                    <?php 
+                                                            if($this->session->userdata("logged_in")){?><span>
+                                                            <?php echo "-"?>
+                                                                <?php
+                                                                echo $this->session->userdata("status_pengguna");
+                                                            }
+                                                            else{
+                                                                ?><span>
+                                                                <?php	
+                                                                echo "Status";
+                                                            } 
+					                                    ?>
+                                                        
                                                     </h5>
+                                                    
                                                     <span class="email"><?php 
                                                             if($this->session->userdata("logged_in")){?><span>
                                                                 <?php
@@ -184,10 +233,6 @@
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">

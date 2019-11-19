@@ -169,7 +169,7 @@
                     <div class="container-fluid">
                         <a href="<?php echo base_url().'Pengguna/tambahData'?>"><button type="button" class="btn btn-primary  pull-right">Tambah Data</button> </a>
                         <div class="row">
-                            <div class="col-lg-13">
+                            <div class="col-lg-11">
 
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
@@ -180,6 +180,7 @@
                                                 <th> Email </th>
                                                 <th> Alamat </th>
                                                 <th> No Telepon </th>
+                                                <th> Jenis Kelamin </th>
                                                 <th> Status </th>
                                                 <th> Aksi </th>
 
@@ -194,6 +195,7 @@
                                               <td><?php echo $a -> email_pengguna?></td>
                                               <td><?php echo $a -> alamat_pengguna?></td>
                                               <td><?php echo $a -> telp_pengguna?></td>
+                                              <td><?php echo $a -> jenis_kelamin?></td>
                                               <td><?php echo $a -> status_pengguna?></td>
 
 
