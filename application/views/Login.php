@@ -51,7 +51,7 @@
 						<span class="label-input100">Password</span>
 					</div>
 
-					
+
 
 
 					<div class="container-login100-form-btn">
@@ -62,12 +62,12 @@
 
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-							or sign up using
+							Register now
 						</span>
 					</div>
 					<!--messages-->
 					<?php echo $this->session->flashdata('msg');?>
-					
+
 				</form>
 
 				<div class="login100-more" style="background-image: url('asset2/images/nusapenida.jpg');">

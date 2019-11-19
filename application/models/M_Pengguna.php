@@ -8,6 +8,11 @@ function tampilkanData(){
   return $query;
 }
 
+function tampilkanData2(){
+  return $this->db->query("SELECT * FROM pengguna a
+  WHERE a.status_pengguna='Tourguide'");
+}
+
 
 function insertTable($a,$b){
   $this->db->insert($a,$b);

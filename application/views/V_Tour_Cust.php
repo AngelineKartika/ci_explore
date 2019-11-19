@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="asset/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="<?=base_url()?>asset/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -156,45 +156,57 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-      <?php include('sidebar-tour.php') ?>
+      <?php include('sidebar.php') ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
-        <?php include('topbar.php') ?>
+
+            <!-- HEADER DESKTOP-->
+            <?php include('topbar.php') ?>
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                        <a href="<?php echo base_url().'Tour/tambahData'?>"><button type="button" class="btn btn-primary  pull-right">Tambah Data</button> </a>
                         <div class="row">
-                            <div class="col-lg-13">
+                            <div class="col-lg-12">
 
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>Alamat</th>
-                                                <th>No Telepon </th>
-                                                <th>Status</th>
+                                                <th>Tour</th>
+                                                <th>Kota</th>
+                                                <th>Tanggal </th>
+                                                <th>Hari </th>
+                                                <th>Harga </th>
+                                                <th>Kuota </th>
+                                                <th>Promo </th>
+                                                <th>Aksi </th>
+
 
                                             </tr>
                                         </thead>
                                         <?php
-                                        foreach($tourguide as $a)
+                                        foreach($tour as $a)
 
                                         {?>
                                         <tbody>
                                             <tr>
-                                              <td><?php echo $a -> nama_pengguna?></td>
-                                              <td><?php echo $a -> email_pengguna?></td>
-                                              <td><?php echo $a -> alamat_pengguna?></td>
-                                              <td><?php echo $a -> telp_pengguna?></td>
-                                              <td><?php echo $a -> status_pengguna?></td>
+                                              <td><?php echo $a -> nama_tour?></td>
+                                              <td><?php echo $a -> nama_kota?></td>
+                                              <td><?php echo $a -> tanggal_tour?></td>
+                                              <td><?php echo $a -> hari_tour?></td>
+                                              <td><?php echo $a -> harga_tour?></td>
+                                              <td><?php echo $a -> kuota?></td>
+                                              <td><?php echo $a -> nama_promo?></td>
 
+                                              <td>
 
+                                                <a href="<?php echo base_url().'Tour/Book/'.$a->id_tour;?>"><button type="button" class="btn btn-primary"data-toggle="tooltip"  title="Book"><i class="fas fa-edit"></i></button> </a>
+                                              </td>
 
                                             </tr>
                                               <?php }?>

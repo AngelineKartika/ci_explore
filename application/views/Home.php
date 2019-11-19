@@ -1,9 +1,91 @@
 <!DOCTYPE html>
+<?php include('koneksi.php')?>
 <html lang="en">
   <head>
     <title>Explore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="<?php echo base_url()?>jquery-3.4.1.min.js"></script>
+    <script>
+
+    $(document).ready(function() {
+
+      $('#nidn').change(function() {
+
+        var nidn = $(this).val();
+
+        $.ajax({
+
+          type: 'POST',
+
+          url: "http://localhost/Explore/ci_explore/Tour/getDataByAjax",
+
+        dataType : "JSON",
+
+        data : {nidn:nidn},
+
+          success: function(data){
+
+
+
+                     $.each(data,function(){
+
+            $('[name="tanggal"]').val(data.tanggal);
+
+            $('[name="hari"]').val(data.hari);
+
+            });
+          }
+        });
+
+      });
+
+
+    });
+
+    </script>
+
+
+    <script>
+
+    $(document).ready(function() {
+
+      $('#id_kota').change(function() {
+
+        var id_kota = $(this).val();
+
+        $.ajax({
+
+          type: 'POST',
+
+          url: "http://localhost:8888/CI-LAB/Home/getDosenByAjax",
+
+        dataType : "JSON",
+
+        data : {id_kota:id_kota}, //variabel:value
+
+          success: function(data){
+
+                     $.each(data,function(){
+                      var hasil;
+                      if(data==0){
+                        hasil="Tutup";
+                      } else {
+                        hasil="Buka";
+                      }
+            $('[name="tanggal"]').val(data.tanggal_tour);
+
+            $('[name="hari"]').val(data.hari_tour);
+
+
+            });
+          }
+        });
+
+      });
+    });
+
+    </script>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -47,13 +129,13 @@
 						}
 						else{
 							?><a href="<?=base_url('Login')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
-							<?php	
+							<?php
 							echo "Log in";
-						} 
+						}
 					?>
-					</span></a> 
+					</span></a>
 			  </li>
-	          
+
 			</ul>
 
 	      </div>
@@ -128,74 +210,83 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-							<form action="#" class="search-property-1">
+              <form action="<?php echo base_url().'Order/tambahData';?>" method="post" class="search-property-1">
+
 		        		<div class="row">
+
 		        			<div class="col-lg align-items-end">
+
 		        				<div class="form-group">
 		        					<label for="#">Destination</label>
-		          				<div class="form-field">
-		          					<div class="icon"><span class="ion-ios-search"></span></div>
-				                <input type="text" class="form-control" placeholder="Search place">
-				              </div>
+                      <select name = "kota" id="nidn" class="form-control">
+                          <?php
+                              foreach($tour as $list)
+                              {
+                          ?>
+
+                          <option value = "<?php echo $list->id_kota ?>">
+                              <?php echo $list->nama_kota?>
+                          </option>
+                          <?php
+                              }
+                          ?>
+                      </select>
 			              </div>
+
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Date of the trip</label>
-		        					<div class="form-field">
-		          					<div class="icon"><span class="ion-ios-calendar"></span></div>
-				                <input type="text"class="form-control checkin_date" placeholder="Check In Date">
-				              </div>
+                      <select name = "tanggal_tour" class="form-control">
+                          <?php
+                              foreach($tour as $list)
+                              {
+                          ?>
+
+                          <option value = "<?php echo $list->tanggal_tour ?>">
+                              <?php echo $list->tanggal_tour?>
+                          </option>
+                          <?php
+                              }
+                          ?>
+                      </select>
 			              </div>
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Day(s)</label>
-		        					<div class="form-field">
-		          					<div class="select-wrap">
-		                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                        <option value="">1</option>
-		                        <option value="">2</option>
-		                        <option value="">3</option>
-		                        <option value="">4</option>
-		                        <option value="">5</option>
-		                      </select>
-		                    </div>
-				              </div>
+                      <select name = "hari_tour" class="form-control">
+                          <?php
+                              foreach($tour as $list)
+                              {
+                          ?>
+
+                          <option value = "<?php echo $list->hari_tour ?>">
+                              <?php echo $list->hari_tour?>
+                          </option>
+                          <?php
+                              }
+                          ?>
+                      </select>
 			              </div>
 		        			</div>
-		        			<div class="col-lg align-items-end">
-		        				<div class="form-group">
-		        					<label for="#">Person(s)</label>
-		        					<div class="form-field">
-		          					<div class="select-wrap">
-		                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                        <option value="">1</option>
-		                        <option value="">2</option>
-		                        <option value="">3</option>
-		                        <option value="">4</option>
-		                        <option value="">5</option>
-		                      </select>
-		                    </div>
-				              </div>
-			              </div>
-		        			</div>
+
 		        			<div class="col-lg align-self-end">
 		        				<div class="form-group">
 		        					<div class="form-field">
-				                <input type="submit" value="Search" class="form-control btn btn-primary">
+				                <input type="submit" value="Book" class="form-control btn btn-primary">
 				              </div>
 			              </div>
 		        			</div>
 		        		</div>
 		        	</form>
+
 		        </div>
 					</div>
 	    	</div>
 	    </div>
     </section>
+
 		<hr>
 		<section class="ftco-section ftco-services-2" id="services-section">
 			<div class="container">
@@ -537,6 +628,7 @@
   <script src="<?=base_url()?>/asset2/js/scrollax.min.js"></script>
   <script src="<?=base_url()?>/asset2/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="<?=base_url()?>/asset2/js/google-map.js"></script>
+  <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
 
   <script src="<?=base_url()?>/asset2/js/main.js"></script>
 

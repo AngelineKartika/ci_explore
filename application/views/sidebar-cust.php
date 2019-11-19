@@ -7,47 +7,17 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
-                <li class="active has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>Master Data</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                          <a href="<?=base_url()?>Pengguna">Pengguna</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>Admin">Admin</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>Tourguide">Tourguide</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>Customer">Customer</a>
-                        </li>
-                        <li>
-                          <a href="<?=base_url()?>Kota">Kota</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>Destinasi">Destinasi</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>Promo">Promo</a>
-                        </li>
-                    </ul>
-                </li>
+
 
                 <li>
-                    <a href="<?=base_url()?>Pesan">
-                        <i class="fas fa-envelope"></i>Pesan</a>
-                </li>
-                <li>
                     <a href="<?=base_url()?>Tour">
-                        <i class="fas fa-table"></i>Tour</a>
+                        <i class="fas fa-table"></i>Reservation</a>
                 </li>
-              
+
 
                 <li>
                     <a href="form.html">
-                        <i class="far fa-check-square"></i>Forms</a>
+                        <i class="far fa-check-square"></i>Finished Reservation</a>
                 </li>
                 <li>
                     <a href="calendar.html">
