@@ -58,7 +58,7 @@
 
           type: 'POST',
 
-          url: "http://localhost:8888/CI-LAB/Home/getDosenByAjax",
+          url: "http://localhost/CI-LAB/Home/getDosenByAjax",
 
         dataType : "JSON",
 
@@ -198,7 +198,7 @@
           </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
+    <section class="ftco-section ftco-no-pb ftco-no-pt" id="destination-section">
     	<div class="container">
     		<div class="row justify-content-center pb-0 pb-mb-5 pt-5 pt-md-0">
           <div class="col-md-12 heading-section ftco-animate">
@@ -353,7 +353,7 @@
 			            <p>For those who already have an account for EXPLORE website, there will be a lot advantages like membership discount.</p>
 			            <p>So, let's join us and EXPLORE!</p>
 
-			            <p><a href="#" class="btn btn-primary py-3 px-4">Book now</a> <a href="#" class="btn btn-white py-3 px-4">Contact us</a></p>
+			            <p><a href="#destination-section" class="btn btn-primary py-3 px-4">Book now</a> <a href="#contact-section" class="btn btn-white py-3 px-4">Contact us</a></p>
 			          </div>
 			        </div>
 		        </div>
@@ -369,7 +369,7 @@
 					<div class="col-md-9 text-center">
 						<h2>Choose the Perfect Destination</h2>
 						<p>We can manage your dream building A small river named Duden flows by their place</p>
-						<p class="mb-0"><a href="#" class="btn btn-white px-4 py-3">Search Places</a></p>
+						<p class="mb-0"><a href="#destination-section" class="btn btn-white px-4 py-3">Search Places</a></p>
 					</div>
 				</div>
 			</div>
