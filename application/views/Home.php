@@ -40,8 +40,6 @@
 	          <li class="nav-item"><a href="#destination-section" class="nav-link"><span>Destination</span></a></li>
 	          <li class="nav-item" style="padding-right:12px"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
               <li class="nav-item">
-			  		
-
 					<?php 
 						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Page')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
 							<?php
