@@ -156,7 +156,7 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-      <?php include('sidebar.php') ?>
+      <?php include('sidebar-tour.php') ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
@@ -194,7 +194,7 @@
                                               <td><?php echo $a -> telp_pengguna?></td>
                                               <td><?php echo $a -> status_pengguna?></td>
 
-                                            
+
 
                                             </tr>
                                               <?php }?>

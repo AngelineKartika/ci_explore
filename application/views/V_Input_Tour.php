@@ -248,6 +248,24 @@
                                           </select>
                                       </div>
 
+                                      <div class="form-group">
+                                          <label for="company" class=" form-control-label">Tourguide</label>
+                                          <select name = "id_tg" class="form-control">
+                                              <?php
+                                                  foreach($pengguna as $p)
+                                                  {
+                                              ?>
+
+                                              <option value = "<?php echo $p->id_pengguna ?>">
+                                                  <?php echo $p->nama_pengguna ?>
+                                              </option>
+                                              <?php
+                                                  }
+                                              ?>
+                                          </select>
+                                      </div>
+
+
 
 
 

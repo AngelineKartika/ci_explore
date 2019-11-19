@@ -6,7 +6,7 @@ class Tour extends CI_Controller{
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('M_Tour','M_Kota','M_Promo'));
+        $this->load->model(array('M_Tour','M_Kota','M_Promo','M_Pengguna'));
     }
 
      function index()
@@ -14,8 +14,8 @@ class Tour extends CI_Controller{
       $data['tour'] = $this->M_Tour->tampilkanData()->result();
       $data['kota'] = $this->M_Kota->tampilkanData()->result();
       $data['promo'] = $this->M_Promo->tampilkanData()->result();
+      $data['pengguna'] = $this->M_Pengguna->tampilkanData()->result();
       $this->load->view('V_Tour',$data);
-
     }
 
 
@@ -24,6 +24,7 @@ class Tour extends CI_Controller{
       $data['tour'] = $this->M_Tour->tampilkanData()->result();
       $data['kota'] = $this->M_Kota->tampilkanData()->result();
       $data['promo'] = $this->M_Promo->tampilkanData()->result();
+      $data['pengguna'] = $this->M_Pengguna->tampilkanData2()->result();
       $this->load->view('V_Input_Tour',$data);
     }
 
@@ -37,6 +38,8 @@ class Tour extends CI_Controller{
         $tangkapHarga    =$this->input->post('harga');
         $tangkapKuota    =$this->input->post('kuota');
         $tangkapIdp    =$this->input->post('id_promo');
+        $tangkapTg    =$this->input->post('id_tg');
+
 
 
         $data=array(
@@ -47,7 +50,8 @@ class Tour extends CI_Controller{
             'hari_tour'      => $tangkapHari,
             'harga_tour'     => $tangkapHarga,
             'kuota'          => $tangkapKuota,
-            'id_promo'       => $tangkapIdp
+            'id_promo'       => $tangkapIdp,
+            'id_tg'        => $tangkapTg
         );
 
         $this->M_Tour->insertTable('tour',$data);
@@ -72,6 +76,7 @@ class Tour extends CI_Controller{
       $tangkapHarga    =$this->input->post('harga');
       $tangkapKuota    =$this->input->post('kuota');
       $tangkapIdp    =$this->input->post('id_promo');
+      $tangkapTg    =$this->input->post('id_tg');
 
 
       $data=array(
@@ -82,7 +87,8 @@ class Tour extends CI_Controller{
           'hari_tour'      => $tangkapHari,
           'harga_tour'     => $tangkapHarga,
           'kuota'          => $tangkapKuota,
-          'id_promo'       => $tangkapIdp
+          'id_promo'       => $tangkapIdp,
+          'id_tg'        => $tangkapTg
       );
       $where=array('id_tour'=>$tangkapId);
       $this->M_Tour->ubah_record($where,'tour',$data);

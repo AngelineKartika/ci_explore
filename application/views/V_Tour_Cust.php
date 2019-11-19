@@ -205,8 +205,7 @@
 
                                               <td>
 
-                                                <a href="<?php echo base_url().'Tour/EditData/'.$a->id_tour;?>"><button type="button" class="btn btn-warning"data-toggle="tooltip"  title="Edit"><i class="fas fa-edit"></i></button> </a>
-                                                <a href="<?php echo base_url().'Tour/hapusData/'.$a->id_tour;?>"><button type="button" class="btn btn-danger"data-toggle="tooltip"  title="Delete"><i class="fas fa-trash-alt"></i></button> </a>
+                                                <a href="<?php echo base_url().'Tour/Book/'.$a->id_tour;?>"><button type="button" class="btn btn-primary"data-toggle="tooltip"  title="Book"><i class="fas fa-edit"></i></button> </a>
                                               </td>
 
                                             </tr>

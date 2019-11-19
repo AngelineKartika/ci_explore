@@ -15,7 +15,7 @@ class Pengguna extends CI_Controller{
         $this->load->view('V_Pengguna',$data);
 
     }
-
+    
 
     function tambahData()
     {
