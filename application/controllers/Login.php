@@ -27,16 +27,22 @@ class Login extends CI_Controller{
         if($baris > 0){
             $data = $this->M_Login->check_user('pengguna',$where)->row_array();
             
+            $id  =$data['id_pengguna'];
             $nama=$data['nama_pengguna'];
             $email = $data['email_pengguna'];
             $password = $data['kata_sandi'];
+            $alamat   = $data['alamat_pengguna'];
+            $telepon   = $data['telp_pengguna'];
             $jeniskelamin = $data['jenis_kelamin'];
             $status = $data['status_pengguna'];
             
             $sesdata = array(
-                'nama_pengguna'         =>$nama,
+                'id_pengguna'           =>$id,
+                'nama_pengguna'         => $nama,
                 'email_pengguna'        => $email,
                 'kata_sandi'            => $password,
+                'alamat_pengguna'       => $alamat,
+                'telp_pengguna'         => $telepon,
                 'jenis_kelamin'         => $jeniskelamin,    
                 'status_pengguna'       => $status,
                 'logged_in' => TRUE

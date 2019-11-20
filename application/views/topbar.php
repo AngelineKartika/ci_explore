@@ -160,6 +160,7 @@
                                                             } 
 					                                    ?></a>
                                         </div>
+                                        
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
@@ -222,17 +223,22 @@
                                                                 <?php	
                                                                 echo "Email";
                                                             } 
-					                                    ?></span>
+                                                            
+					                                    ?>
+                                                        </span>
+
+
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href="Account">
+                                                        <i class="zmdi zmdi-account"></i>My Account</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                <?php $id_pengguna= $this->session->userdata("id_pengguna"); ?>
+                                                    <a href="<?php echo base_url().'Account/EditData/'.$id_pengguna;?>">
+                                                        <i class="zmdi zmdi-settings"></i>Edit Profile</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
