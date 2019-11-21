@@ -27,6 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>/asset2/css/main.css">
 <!--===============================================================================================-->
 </head>
+<STYLE>A {text-decoration: none;} </STYLE>
 <body style="background-color: #666666;">
 
 	<div class="limiter">
@@ -61,9 +62,9 @@
 					</div>
 
 					<div class="text-center p-t-46 p-b-20">
-						<span class="txt2">
+						<span class="txt2"><a href="<?= base_url('Login/register');?>">
 							Register now
-						</span>
+						</span></a>
 					</div>
 					<!--messages-->
 					<?php echo $this->session->flashdata('msg');?>

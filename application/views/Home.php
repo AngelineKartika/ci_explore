@@ -5,24 +5,23 @@
     <title>Explore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="<?php echo base_url()?>jquery-3.4.1.min.js"></script>
+    <script src="<?php echo base_url()?>/asset2/js/jquery-3.2.1.min.js"></script>
     <script>
 
     $(document).ready(function() {
 
       $('#nidn').change(function() {
 
-        var nidn = $(this).val();
-
+        var nidn2 = $(this).val();
         $.ajax({
 
           type: 'POST',
 
-          url: "http://localhost/Explore/ci_explore/Tour/getDataByAjax",
+          url: "http://localhost:8888/Explore/ci_explore/Tour/getDataByAjax",
 
         dataType : "JSON",
 
-        data : {nidn:nidn},
+        data : {kota:nidn2}, //value pada variabel nidn2 akan dikirim ke url lalu dikirim ke variabel kota
 
           success: function(data){
 
@@ -30,9 +29,9 @@
 
                      $.each(data,function(){
 
-            $('[name="tanggal"]').val(data.tanggal);
+            $('[name="tanggal_tour"]').val(data.tanggal); //masukan data dari variabel tanggal ke input type
 
-            $('[name="hari"]').val(data.hari);
+            $('[name="hari_tour"]').val(data.hari);
 
             });
           }
@@ -58,7 +57,7 @@
 
           type: 'POST',
 
-          url: "http://localhost/CI-LAB/Home/getDosenByAjax",
+          url: "http://localhost:8888/Explore/ci_explore/Home/getDosenByAjax",
 
         dataType : "JSON",
 
@@ -122,7 +121,7 @@
 	          <li class="nav-item"><a href="#destination-section" class="nav-link"><span>Destination</span></a></li>
 	          <li class="nav-item" style="padding-right:12px"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
               <li class="nav-item">
-					<?php 
+					<?php
 						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Page')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
 							<?php
 							echo $this->session->userdata("nama_pengguna");
@@ -210,7 +209,7 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-              <form action="<?php echo base_url().'Order/tambahData';?>" method="post" class="search-property-1">
+              <form action="<?php echo base_url().'Order/insertData';?>" method="post" class="search-property-1">
 
 		        		<div class="row">
 
@@ -237,7 +236,7 @@
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Date of the trip</label>
-                      <select name = "tanggal_tour" class="form-control">
+                      <select name = "tanggal_tour" class="form-control" disabled>
                           <?php
                               foreach($tour as $list)
                               {
@@ -255,7 +254,7 @@
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Day(s)</label>
-                      <select name = "hari_tour" class="form-control">
+                      <select name = "hari_tour" class="form-control" disabled>
                           <?php
                               foreach($tour as $list)
                               {
@@ -488,7 +487,7 @@
 
         <div class="row block-9" style="padding-bottom: 50px;">
           <div class="col-md-7 order-md-last d-flex">
-		  <form action="<?php echo base_url().'Home/insertTable';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
+		  <form action="<?php echo base_url().'Email';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Your Name" name="nama">
               </div>
@@ -565,7 +564,7 @@
 
 
 
-		
+
 
 
     <footer class="ftco-footer ftco-section">

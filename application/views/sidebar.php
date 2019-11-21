@@ -35,15 +35,42 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="<?=base_url()?>Pesan">
+                <li class="active has-sub">
+                    <a class="js-arrow" href="#">
                         <i class="fas fa-envelope"></i>Pesan</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                          <a href="<?=base_url()?>Pesan">Belum Dibalas</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url()?>Pesan">Sudah Dibalas</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Pages</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="login.html">Login</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li>
+                            <a href="forget-pass.html">Forget Password</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="<?=base_url()?>Tour">
                         <i class="fas fa-table"></i>Tour</a>
                 </li>
-              
+
 
                 <li>
                     <a href="form.html">

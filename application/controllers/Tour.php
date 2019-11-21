@@ -101,5 +101,11 @@ class Tour extends CI_Controller{
       redirect('Tour');
     }
 
+    function getDataByAjax(){
+      $kota2=$this->input->post('kota'); //dollar disni
+      $where=array('id_kota'=>$kota2); //sama kyk dollar disini
+      $data=$this->M_Tour->getDataByAjax($where);
+      echo json_encode($data);
+    }
 
   }

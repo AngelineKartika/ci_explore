@@ -156,7 +156,7 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-      <?php include('sidebar.php') ?>
+      <?php include('sidebar-cust.php') ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
@@ -179,7 +179,7 @@
                                                 <th>Alamat</th>
                                                 <th>No Telepon </th>
                                                 <th>Status</th>
-                                                
+
 
                                             </tr>
                                         </thead>
@@ -194,7 +194,7 @@
                                               <td><?php echo $a -> alamat_pengguna?></td>
                                               <td><?php echo $a -> telp_pengguna?></td>
                                               <td><?php echo $a -> status_pengguna?></td>
-                                              
+
                                             </tr>
                                               <?php }?>
 

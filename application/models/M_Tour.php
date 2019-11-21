@@ -47,6 +47,18 @@ function get_data_by_ajax($where){
   }
 
 
+  function getDataByAjax($where){
+    $query=$this->db->get_where('tour',$where);
+    if($query->num_rows()>0){
+      foreach ($query->result() as $data) {
+        $output=array(
+          'tanggal'=>$data->tanggal_tour,
+          'hari'=>$data->hari_tour);
+        }
+      }
+      return $output;
+    }
+
 
 
 }
