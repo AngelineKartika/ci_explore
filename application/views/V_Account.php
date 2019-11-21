@@ -185,7 +185,7 @@
                                                     <label for="email-input" class=" form-control-label">ID</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="text" id="email-input" name="id"  class="form-control" value="<?php echo $this->session->userdata("id_pengguna");?>" readonly>
+                                                    <input type="text" id="email-input" name="id"  class="form-control" value="<?=$a->id_pengguna?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -194,7 +194,7 @@
                                                     <label for="email-input" class=" form-control-label">Nama</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="text" id="email-input" name="nama"  class="form-control" value="<?php echo $this->session->userdata("nama_pengguna");?>" readonly>
+                                                    <input type="text" id="email-input" name="nama"  class="form-control" value="<?=$a->nama_pengguna?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -203,7 +203,7 @@
                                                     <label for="email-input" class=" form-control-label">Email</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="email"  class="form-control" value="<?php echo $this->session->userdata("email_pengguna");?>" readonly>
+                                                    <input type="email" id="email-input" name="email"  class="form-control" value="<?=$a->email_pengguna?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -212,7 +212,7 @@
                                                     <label for="email-input" class=" form-control-label">Alamat</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="alamat"  class="form-control" value="<?php echo $this->session->userdata("alamat_pengguna");?>" readonly>
+                                                    <input type="email" id="email-input" name="alamat"  class="form-control" value="<?=$a->alamat_pengguna?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -221,7 +221,7 @@
                                                     <label for="email-input" class=" form-control-label">No Telepon</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="telepon"  class="form-control" value=" <?php echo $this->session->userdata("telp_pengguna");?>" readonly>
+                                                    <input type="email" id="email-input" name="telepon"  class="form-control" value="<?=$a->telp_pengguna?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -230,7 +230,7 @@
                                                     <label for="email-input" class=" form-control-label">Jenis Kelamin</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="jeniskelamin"  class="form-control" value="<?php echo $this->session->userdata("jenis_kelamin");?>" readonly>
+                                                    <input type="email" id="email-input" name="jeniskelamin"  class="form-control" value="<?php echo $a->jenis_kelamin;?>" readonly>
                                                    
                                                 </div>
                                   </div>
@@ -239,11 +239,8 @@
                                                     <label for="select" class=" form-control-label">Status</label>
                                                 </div>
                                                 <div class="col-12 col-md-7">
-                                                    <select name="status" id="select" class="form-control" disabled>
-                                                        <option value=Customer <?php if($this->session->userdata("status_pengguna")=="Customer") {echo "selected";}?>>Customer</option>
-                                                        <option value=Tourguide <?php if($this->session->userdata("status_pengguna")=="Tourguide"){echo "selected";}?>>Tourguide</option>
-                                                        <option value=Admin <?php if($this->session->userdata("status_pengguna")=="Admin") {echo "selected";}?>>Admin</option>
-                                                    </select>
+                                                <input type="email" id="email-input" name="jeniskelamin"  class="form-control" value="<?=$a->status_pengguna?>" readonly>
+                                                
                                                 </div>
                                             </div>
                                    </a>

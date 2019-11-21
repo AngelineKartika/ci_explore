@@ -226,13 +226,13 @@
                                                             
 					                                    ?>
                                                         </span>
-
-
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="Account">
+                                                <?php $id_pengguna= $this->session->userdata("id_pengguna"); ?>
+                                                  
+                                                <a href="<?php echo base_url().'Account/TampilData/'.$id_pengguna;?> ">
                                                         <i class="zmdi zmdi-account"></i>My Account</a>
                                                 </div>
                                                 <div class="account-dropdown__item">

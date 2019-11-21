@@ -201,15 +201,12 @@
                                       </div>
                                       <div class="form-group">
                                           <label for="vat" class=" form-control-label">Jenis Kelamin</label>
-                                          <input type="text" id="vat" class="form-control" name="jk" value="<?=$a->jenis_kelamin?>" disabled>
+                                          <input type="text" id="vat" class="form-control" name="jk" value="<?=$a->jenis_kelamin?>" readonly>
                                       </div>
                                       <div class="form-group">
                                           <label for="vat" class=" form-control-label">Status</label>
-                                            <select name = "status" class="form-control" disabled>
-                                              <option value = Customer <?php if($a->status_pengguna=="Customer") {echo "selected";}?>>Customer</option>
-                                              <option value = Tourguide <?php if($a->status_pengguna=="Tourguide") {echo "selected";}?>> Tourguide</option>
-                                              <option value = Admin <?php if($a->status_pengguna=="Admin") {echo "selected";}?>> Admin</option>
-                                            </select>
+                                          <input type="text" id="vat" class="form-control" name="status" value="<?=$a->status_pengguna?>" readonly>
+
                                       </div>
                                     
 
