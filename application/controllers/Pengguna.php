@@ -70,7 +70,7 @@ class Pengguna extends CI_Controller{
       $data = array (
         'id_pengguna'       => $tangkapId,
         'nama_pengguna'     => $tangkapNama,
-        //'kata_sandi'        => $tangkapPass,
+        //'kata_sandi'      => $tangkapPass,
         'email_pengguna'    => $tangkapEmail,
         'alamat_pengguna'   => $tangkapAlamat,
         'telp_pengguna'     => $tangkapTelp,
