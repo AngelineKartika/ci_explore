@@ -46,4 +46,28 @@ class Account extends CI_Controller{
       $this->M_Pengguna->ubah_record($where,'pengguna',$data);
       redirect('Pengguna');
     }
+
+    public function EditPass($id_pengguna)
+    {
+      $where = array('id_pengguna'=>$id_pengguna);
+      $record['pengguna']=$this->M_Account->pilih_record('pengguna',$where)->result();
+      $this->load->view('V_Edit_Password',$record);
+    }
+
+    public function UpdatePass()
+    {
+      $tangkapId      =$this->input->post('id');
+      $tangkapPass    =md5($this->input->post('password'));
+     
+      $data = array (
+        'id_pengguna'       =>$tangkapId,
+        'kata_sandi'        => $tangkapPass,
+      );
+
+      $where=array('id_pengguna'=>$tangkapId);
+      $this->M_Pengguna->ubah_record($where,'pengguna',$data);
+      redirect('Pengguna');
+    }
+
+      
   }

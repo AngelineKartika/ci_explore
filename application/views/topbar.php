@@ -240,6 +240,11 @@
                                                     <a href="<?php echo base_url().'Account/EditData/'.$id_pengguna;?>">
                                                         <i class="zmdi zmdi-settings"></i>Edit Profile</a>
                                                 </div>
+                                                <div class="account-dropdown__item">
+                                                <?php $id_pengguna= $this->session->userdata("id_pengguna"); ?>
+                                                    <a href="<?php echo base_url().'Account/EditPass/'.$id_pengguna;?>">
+                                                        <i class="zmdi zmdi-key"></i>Edit Password</a>
+                                                </div>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="<?=base_url('Login/logout')?>">

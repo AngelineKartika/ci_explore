@@ -156,18 +156,7 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-        
-      <?php 
-        if($this->session->userdata("status_pengguna")=="Admin"){
-            include('sidebar.php');
-        }
-        else if($this->session->userdata("status_pengguna")=="Tourguide"){
-            include('sidebar-tour.php');
-        }
-        else{
-            include('sidebar-cust.php');
-        }
-       ?>
+      <?php include('sidebar.php') ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
@@ -175,102 +164,44 @@
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
 
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-9">
                               <div class="card">
                                   <div class="card-header">
-                                  <i class="fa fa-user-circle" aria-hidden="true" style="padding-right:20px;"></i>
-                                      <strong>My Account</strong>
+                                  <i class="fa fa-key" aria-hidden="true" style="padding-right:20px;"></i>
+                                      <strong>Edit Password</strong>
 
                                   </div>
                                   <?php foreach ($pengguna as $a)?>
-                                  <form action="" method="post">
+                                  <form action="<?php echo base_url().'Account/UpdatePass';?>" method="post">
                                   <div class="card-body card-block">
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">ID</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="text" id="email-input" name="id"  class="form-control" value="<?=$a->id_pengguna?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Nama</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="text" id="email-input" name="nama"  class="form-control" value="<?=$a->nama_pengguna?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Email</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="email"  class="form-control" value="<?=$a->email_pengguna?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Alamat</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="alamat"  class="form-control" value="<?=$a->alamat_pengguna?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">No Telepon</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="telepon"  class="form-control" value="<?=$a->telp_pengguna?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="email-input" class=" form-control-label">Jenis Kelamin</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="email" id="email-input" name="jeniskelamin"  class="form-control" value="<?php echo $a->jenis_kelamin;?>" readonly>
-                                                   
-                                                </div>
-                                  </div>
-                                  <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="select" class=" form-control-label">Status</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                <input type="email" id="email-input" name="jeniskelamin"  class="form-control" value="<?=$a->status_pengguna?>" readonly>
-                                                
-                                                </div>
-                                            </div>
-                                   </a>
+                                  <div class="form-group" hidden>
+                                          <label for="vat" class=" form-control-label">Id Pengguna</label>
+                                          <input type="text"  class="form-control" name="id"  value="<?=$a->id_pengguna?>">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="vat" class=" form-control-label">New Password</label>
+                                          <input type="password"  class="form-control" name="pass" id="password" onkeyup='check();' required>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="vat" class=" form-control-label">Confirm New Password</label>
+                                          <input type="password"  class="form-control" name="password" id="confirm_password" onkeyup='check();' required>
+                                          <span id='message'></span>
+                                      </div>
+                                      <button type="submit" class="btn btn-primary " id="submit">Submit</button> </a>
                                     </form>
 
                                       </div>
 
                                   </div>
                               </div>
-
-
-
-
                             </div>
 
                         </div>
-
-
-
 
                     </div>
                 </div>
@@ -278,6 +209,23 @@
         </div>
 
     </div>
+
+    <script>
+  var check = function() {
+  if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = '#dea9a9';
+    document.getElementById('message').style.fontSize = '10pt';
+    document.getElementById('message').innerHTML = 'match';
+      $('#submit').prop('disabled', false);
+  } else {
+    document.getElementById('message').style.color = '#a1a09f';
+    document.getElementById('message').style.fontSize = '10pt';
+    document.getElementById('message').innerHTML = 'does not match';
+    $('#submit').prop('disabled', true);
+  }
+  }
+
+  </script>
 
     <!-- Jquery JS-->
     <!-- Jquery JS-->
