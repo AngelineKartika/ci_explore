@@ -5,7 +5,7 @@ class M_Tour extends CI_Model{
 
 function tampilkanData(){
   return $this->db->query("SELECT a.id_tour, a.id_kota, a.nama_tour,a.tanggal_tour,a.hari_tour,
-    a.harga_tour,a.kuota, a.id_promo,b.id_kota, b.nama_kota,c.id_promo,
+    a.harga_tour,a.id_tg,a.kuota, a.id_promo,b.id_kota, b.nama_kota,c.id_promo,
     c.nama_promo,d.id_pengguna,d.nama_pengguna
     FROM tour a
     join kota b ON a.id_kota = b.id_kota
@@ -53,7 +53,10 @@ function get_data_by_ajax($where){
       foreach ($query->result() as $data) {
         $output=array(
           'tanggal'=>$data->tanggal_tour,
-          'hari'=>$data->hari_tour);
+          'hari'=>$data->hari_tour,
+          'id'=>$data->id_tour,
+          'tg'=>$data->id_tg,
+          );
         }
       }
       return $output;

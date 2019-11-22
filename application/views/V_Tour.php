@@ -184,6 +184,7 @@
                                                 <th>Harga </th>
                                                 <th>Kuota </th>
                                                 <th>Promo </th>
+                                                <th>Tourguide </th>
                                                 <th>Aksi </th>
 
 
@@ -202,6 +203,7 @@
                                               <td><?php echo $a -> harga_tour?></td>
                                               <td><?php echo $a -> kuota?></td>
                                               <td><?php echo $a -> nama_promo?></td>
+                                              <td><?php echo $a -> nama_pengguna?></td>
 
                                               <td>
 

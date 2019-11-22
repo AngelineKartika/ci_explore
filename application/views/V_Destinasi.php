@@ -160,7 +160,7 @@
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
-        
+
             <!-- HEADER DESKTOP-->
             <?php include('topbar.php') ?>
             <!-- END HEADER DESKTOP-->
@@ -171,7 +171,7 @@
                     <div class="container-fluid">
                         <a href="<?php echo base_url().'Destinasi/tambahData'?>"><button type="button" class="btn btn-primary  pull-right">Tambah Data</button> </a>
                         <div class="row">
-                            <div class="col-lg-9">
+                            <div class="col-lg-12">
 
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
@@ -186,7 +186,7 @@
                                         </thead>
                                         <?php
                                         foreach($destinasi as $a)
-                                        
+
                                         {?>
                                         <tbody>
                                             <tr>

@@ -19,9 +19,9 @@
 
           url: "http://localhost:8888/Explore/ci_explore/Tour/getDataByAjax",
 
-        dataType : "JSON",
+          dataType : "JSON",
 
-        data : {kota:nidn2}, //value pada variabel nidn2 akan dikirim ke url lalu dikirim ke variabel kota
+          data : {kota:nidn2}, //value pada variabel nidn2 akan dikirim ke url lalu dikirim ke variabel kota
 
           success: function(data){
 
@@ -32,6 +32,11 @@
             $('[name="tanggal_tour"]').val(data.tanggal); //masukan data dari variabel tanggal ke input type
 
             $('[name="hari_tour"]').val(data.hari);
+
+            $('[name="id_tour"]').val(data.id);
+
+            $('[name="id_tg"]').val(data.tg);
+
 
             });
           }
@@ -75,6 +80,11 @@
             $('[name="tanggal"]').val(data.tanggal_tour);
 
             $('[name="hari"]').val(data.hari_tour);
+
+            $('[name="id"]').val(data.id_tour);
+
+            $('[name="tg"]').val(data.id_tg);
+
 
 
             });
@@ -125,6 +135,7 @@
 						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Page')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
 							<?php
 							echo $this->session->userdata("nama_pengguna");
+
 						}
 						else{
 							?><a href="<?=base_url('Login')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
@@ -188,7 +199,6 @@
 			            <h1 class="mb-4 mt-3">Never Stop Exploring</h1>
 			            <p>Nusa Penida is the largest and most exotic of the 3 Nusa islands, thanks to its collection of unique Hindu temples and picturesque natural features of cliff formations and lagoons. </p>
 
-			            <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover <span class="ion-ios-arrow-forward"></span></a></p>
 		            </div>
 		          </div>
 	        	</div>
@@ -213,8 +223,39 @@
 
 		        		<div class="row">
 
-		        			<div class="col-lg align-items-end">
+		        			<div class="col-lg align-items-end" hidden>
+                      <div class="form-group">
+                          <label for="company" class=" form-control-label">ID</label>
+                          <?php
+                          $queryp=mysqli_query($koneksi,"SELECT *FROM order_cust");
+                          $baris=mysqli_num_rows($queryp);
+                          $barisbaru=$baris+1;
+                          ?>
+                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" >
+                      </div>
+                    </div>
 
+                    <div class="col-lg align-items-end" hidden>
+  		        				<div class="form-group">
+  		        					<label for="#">ID TG</label>
+                        <select name = "id_tg" class="form-control">
+                            <?php
+                                foreach($tour as $list)
+                                {
+                            ?>
+
+                            <option value = "<?php echo $list->id_tg?>">
+                                <?php echo $list->id_tg?>
+                            </option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+  			              </div>
+  		        			</div>
+
+
+                    <div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Destination</label>
                       <select name = "kota" id="nidn" class="form-control">
@@ -262,6 +303,25 @@
 
                           <option value = "<?php echo $list->hari_tour ?>">
                               <?php echo $list->hari_tour?>
+                          </option>
+                          <?php
+                              }
+                          ?>
+                      </select>
+			              </div>
+		        			</div>
+
+                  <div class="col-lg align-items-end" hidden>
+		        				<div class="form-group">
+		        					<label for="#">ID</label>
+                      <select name = "id_tour" class="form-control">
+                          <?php
+                              foreach($tour as $list)
+                              {
+                          ?>
+
+                          <option value = "<?php echo $list->id_tour ?>">
+                              <?php echo $list->id_tour?>
                           </option>
                           <?php
                               }
@@ -388,12 +448,12 @@
     				<div class="project">
     					<div class="img">
     						<div class="vr"><span>Sale</span></div>
-		    				<a href="destination.html"><img src="<?=base_url()?>/asset2/images/labuanbajo.jpg" class="img-fluid" alt="Colorlib Template"></a>
+		    				<a href="#destination-section"><img src="<?=base_url()?>/asset2/images/labuanbajo.jpg" class="img-fluid" alt="Colorlib Template"></a>
 	    				</div>
 	    				<div class="text">
-	    					<h4 class="price"><span class="old-price mr-2">$500</span>$400</h4>
+	    					<h4 class="price"><span class="old-price mr-2">Rp 7500 000</span>Rp 7000 000</h4>
 	    					<span>7 Days Tour</span>
-	    					<h3><a href="destination.html">Labuan Bajo, NTT</a></h3>
+	    					<h3><a href="#destination-section">Labuan Bajo, NTT</a></h3>
 	    					<div class="star d-flex clearfix">
 	    						<div class="mr-auto float-left">
 		    						<span class="ion-ios-star"></span>
@@ -403,7 +463,6 @@
 		    						<span class="ion-ios-star"></span>
 	    						</div>
 	    						<div class="float-right">
-	    							<span class="rate"><a href="#">(120)</a></span>
 	    						</div>
 	    					</div>
 	    				</div>
@@ -415,12 +474,12 @@
     			<div class="col-md-6 col-lg-4 ftco-animate">
     				<div class="project">
     					<div class="img">
-		    				<a href="destination.html"><img src="<?=base_url()?>/asset2/images/pulocinto.jpg" class="img-fluid" alt="Colorlib Template"></a>
+		    				<a href="#destination-section"><img src="<?=base_url()?>/asset2/images/pulocinto.jpg" class="img-fluid" alt="Colorlib Template"></a>
 	    				</div>
 	    				<div class="text">
-	    					<h4 class="price">$400</h4>
+	    					<h4 class="price">Rp 5000 000</h4>
 	    					<span>5 Days Tour</span>
-	    					<h3><a href="destination.html">Pulo Cinto, Gorontalo</a></h3>
+	    					<h3><a href="#destination-section">Pulo Cinto, Gorontalo</a></h3>
 	    					<div class="star d-flex clearfix">
 	    						<div class="mr-auto float-left">
 		    						<span class="ion-ios-star"></span>
@@ -430,7 +489,6 @@
 		    						<span class="ion-ios-star"></span>
 	    						</div>
 	    						<div class="float-right">
-	    							<span class="rate"><a href="#">(120)</a></span>
 	    						</div>
 	    					</div>
 	    				</div>
@@ -445,12 +503,12 @@
     			<div class="col-md-6 col-lg-4 ftco-animate">
     				<div class="project">
     					<div class="img">
-		    				<a href="destination.html"><img src="<?=base_url()?>/asset2/images/nusapenida.jpg" class="img-fluid" alt="Colorlib Template"></a>
+		    				<a href="#destination-section"><img src="<?=base_url()?>/asset2/images/nusapenida.jpg" class="img-fluid" alt="Colorlib Template"></a>
 	    				</div>
 	    				<div class="text">
-	    					<h4 class="price">$400</h4>
+	    					<h4 class="price">Rp 6000 000</h4>
 	    					<span>6 Days Tour</span>
-	    					<h3><a href="destination.html">Nusa Penida, Bali</a></h3>
+	    					<h3><a href="#destination-section">Nusa Penida, Bali</a></h3>
 	    					<div class="star d-flex clearfix">
 	    						<div class="mr-auto float-left">
 		    						<span class="ion-ios-star"></span>
@@ -460,7 +518,7 @@
 		    						<span class="ion-ios-star"></span>
 	    						</div>
 	    						<div class="float-right">
-	    							<span class="rate"><a href="#">(120)</a></span>
+
 	    						</div>
 	    					</div>
 	    				</div>

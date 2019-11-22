@@ -19,29 +19,23 @@ class Order extends CI_Controller{
     function insertData()
     {
       if($this->session->userdata("logged_in")){
-        $tangkapId      =$this->input->post('kota'); //di dalam petik satu pada post itu adalah name di input type
-        $tangkapNama    =$this->input->post('tanggal_tour');
-        $tangkapPass    =$this->input->post('hari_tour');
-        $tangkapEmail   =$this->input->post('email');
-        $tangkapAlamat  =$this->input->post('alamat');
-        $tangkapTelp    =$this->input->post('telp');
-        $tangkapJK      =$this->input->post('jk');
-        $tangkapStatus  =$this->input->post('status');
+        $tangkapIdo   =$this->input->post('id');
+        $tangkapId   =$this->input->post('id_tour');
+        $tangkapPgn= $this->session->userdata("id_pengguna");
+        $tangkapTg   =$this->input->post('id_tg');
 
 
         $data=array(
-            'id_pengguna'       => $tangkapId,//petik satu itu dalam field db
-            'nama_pengguna'     => $tangkapNama,
-            'kata_sandi'        => md5($tangkapPass),
-            'email_pengguna'    => $tangkapEmail,
-            'alamat_pengguna'   => $tangkapAlamat,
-            'telp_pengguna'     => $tangkapTelp,
-            'jenis_kelamin'     => $tangkapJK,
-            'status_pengguna'   => $tangkapStatus
+            'id_order'          => $tangkapIdo,
+            'id_tour'           => $tangkapId,
+            'id_cust'           => $tangkapPgn,
+            'id_tg'             => $tangkapTg
                 );
 
-        $this->M_Pengguna->insertTable('pengguna',$data);
-        alert('Thank you!');
+        $this->M_Order->insertTable('order_cust',$data);
+        $message = "Booking successful!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        redirect('Home');
       }
       else{
         redirect('Login');}
@@ -49,3 +43,4 @@ class Order extends CI_Controller{
 
 
     }
+    ?>

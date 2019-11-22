@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Account extends CI_Controller{
- 
+
     function __construct()
     {
           parent::__construct();
@@ -48,7 +48,7 @@ class Account extends CI_Controller{
         'email_pengguna'    => $tangkapEmail,
         'alamat_pengguna'   => $tangkapAlamat,
         'telp_pengguna'     => $tangkapTelp,
-      
+
       );
       $where=array('id_pengguna'=>$tangkapId);
       $this->M_Pengguna->ubah_record($where,'pengguna',$data);

@@ -169,7 +169,7 @@
                     <div class="container-fluid">
                         <a href="<?php echo base_url().'Promo/tambahData'?>"><button type="button" class="btn btn-primary  pull-right">Tambah Data</button> </a>
                         <div class="row">
-                            <div class="col-lg-9">
+                            <div class="col-lg-11">
                               <br>
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
