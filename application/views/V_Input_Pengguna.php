@@ -159,7 +159,17 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-      <?php include('sidebar.php') ?>
+        <?php 
+        if($this->session->userdata("status_pengguna")=="Admin"){
+            include('sidebar.php');
+        }
+        else if($this->session->userdata("status_pengguna")=="Tourguide"){
+            include('sidebar-tour.php');
+        }
+        else{
+            include('sidebar-cust.php');
+        }
+       ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
