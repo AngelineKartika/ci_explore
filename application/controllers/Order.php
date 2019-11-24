@@ -13,26 +13,59 @@ class Order extends CI_Controller{
     {
         $data['order_cust']= $this->M_Order->tampilkanData()->result();
         $this->load->view('V_Order',$data);
+        $this->load->view('V_Confirm',$data);
 
     }
 
-    function insertData()
-    {
+    function confirmData(){
       if($this->session->userdata("logged_in")){
-        $tangkapIdo   =$this->input->post('id');
-        $tangkapId   =$this->input->post('id_tour');
-        $tangkapPgn= $this->session->userdata("id_pengguna");
-        $tangkapTg   =$this->input->post('id_tg');
+        $tangkapIdo    =$this->input->post('id');
+        $tangkapId     =$this->input->post('id_tour');
+        $tangkapPgn    = $this->session->userdata("id_pengguna");
+        $tangkapTg     =$this->input->post('id_tg');
+        $tangkapStatus =$this->input->post('status_order');
 
 
         $data=array(
             'id_order'          => $tangkapIdo,
             'id_tour'           => $tangkapId,
             'id_cust'           => $tangkapPgn,
-            'id_tg'             => $tangkapTg
+            'id_tg'             => $tangkapTg,
+            'status_order'      => $tangkapStatus
                 );
 
+      $this->M_Order->insertTable('order_pending',$data);
+      redirect('Confirm');}
+      else{
+        redirect('Login');}
+    }
+
+
+    function insertData()
+    {
+      if($this->session->userdata("logged_in")){
+        $tangkapIdo    =$this->input->post('ido');
+        $tangkapId     =$this->input->post('idt');
+        $tangkapPgn    = $this->session->userdata("id_pengguna");
+        $tangkapTg     =$this->input->post('idtg');
+        $tangkapStatus =$this->input->post('status_order');
+
+
+        $data=array(
+            'id_order'          => $tangkapIdo,
+            'id_tour'           => $tangkapId,
+            'id_cust'           => $tangkapPgn,
+            'id_tg'             => $tangkapTg,
+            'status_order'      => $tangkapStatus
+                );
+
+          $data2=array(
+              'id_order'          => $tangkapIdo,
+              );
+
         $this->M_Order->insertTable('order_cust',$data);
+        $this->M_Order->deleteOrderPending('order_pending',$data2);
+
         $message = "Booking successful!";
         echo "<script type='text/javascript'>alert('$message');</script>";
         redirect('Home');
@@ -40,6 +73,7 @@ class Order extends CI_Controller{
       else{
         redirect('Login');}
     }
+
 
 
     }
