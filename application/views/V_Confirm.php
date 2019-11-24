@@ -5,87 +5,8 @@
     <title>Explore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="<?php echo base_url()?>jquery-3.4.1.min.js"></script>
-    <script>
+    <script src="<?php echo base_url()?>/asset2/js/jquery-3.2.1.min.js"></script>
 
-    $(document).ready(function() {
-
-      $('#nidn').change(function() {
-
-        var nidn = $(this).val();
-
-        $.ajax({
-
-          type: 'POST',
-
-          url: "http://localhost/Explore/ci_explore/Tour/getDataByAjax",
-
-        dataType : "JSON",
-
-        data : {nidn:nidn},
-
-          success: function(data){
-
-
-
-                     $.each(data,function(){
-
-            $('[name="tanggal"]').val(data.tanggal);
-
-            $('[name="hari"]').val(data.hari);
-
-            });
-          }
-        });
-
-      });
-
-
-    });
-
-    </script>
-
-
-    <script>
-
-    $(document).ready(function() {
-
-      $('#id_kota').change(function() {
-
-        var id_kota = $(this).val();
-
-        $.ajax({
-
-          type: 'POST',
-
-          url: "http://localhost/CI-LAB/Home/getDosenByAjax",
-
-        dataType : "JSON",
-
-        data : {id_kota:id_kota}, //variabel:value
-
-          success: function(data){
-
-                     $.each(data,function(){
-                      var hasil;
-                      if(data==0){
-                        hasil="Tutup";
-                      } else {
-                        hasil="Buka";
-                      }
-            $('[name="tanggal"]').val(data.tanggal_tour);
-
-            $('[name="hari"]').val(data.hari_tour);
-
-
-            });
-          }
-        });
-
-      });
-    });
-
-    </script>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -109,22 +30,19 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
         <!--logo-->
-            <a class="navbar-brand" href="<?=base_url()?>Home">EXPLORE</a>
+            <a class="navbar-brand" href="index.html">EXPLORE</a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-          
-
-          
+	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
 
-              <li class="nav-item">
+            <li class="nav-item">
 					<?php
-						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Page')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
+						if($this->session->userdata("logged_in")){?><a href="<?=base_url('Home')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
 							<?php
-							echo $this->session->userdata("nama_pengguna");
+							echo ('Home');
 						}
 						else{
 							?><a href="<?=base_url('Login')?>" class="btn btn-primary px-4 py-2 mt-2"><span>
@@ -146,78 +64,72 @@
 
 
 
-
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Sign Up</h2>
-            <p>Join marvelous adventure with us</p>
+		<section class="ftco-section ftco-services-2" id="services-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Confirmation Page</h2>
+            <p>Check your order details before you click confirm</p>
           </div>
         </div>
 
+			</div>
+
+
     <div class="row block-9" style="padding-bottom: 30px;padding-left: 80px;padding-right: 80px; ">
        <div class="col-md">
-		   <form action="<?php echo base_url().'Login/insertCust';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
-              <div class="form-group" hidden>
-                  <label for="company" class=" form-control-label">ID</label>
-                  <?php
-                  $queryp=mysqli_query($koneksi,"SELECT *FROM pengguna");
-                  $baris=mysqli_num_rows($queryp);
-                  $barisbaru=$baris+1;
-                  ?>
-                  <input type="text" id="company" class="form-control" name="id" value="<?php echo "PGN-".$barisbaru?>" readonly>
-              </div>
-              <div class="form-group">
-                Name
-                <input type="text" class="form-control" name="nama" required>
-              </div>
-              <div class="form-group">
-                Gender
-                <select name = "gender" class="form-control">
+       <?php foreach ($order_pending as $a)?>
+       <form action="<?php echo base_url().'Order/insertData';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
 
-                    <option value = "l"> Laki-laki </option>
-                    <option value = "p"> Perempuan</option>
-                </select>
-               </div>
               <div class="form-group">
-                Email
-                <input type="text" class="form-control"  name="email" required>
+                Id Order
+                <input type="text" class="form-control" name="ido"  value="<?=$a->id_order?>" readonly>
               </div>
               <div class="form-group">
-                Password
-                <input type="password" class="form-control"  name="pass" id="password" onkeyup='check();' required>
+                Id TG
+                <input type="text" class="form-control" name="idtg"  value="<?=$a->id_tg?>" readonly>
               </div>
               <div class="form-group">
-                Confirm Password
-                <input type="password" class="form-control"  name="password" id="confirm_password" onkeyup='check();' required>
-                <span id='message'></span>
+                Id Tour
+                <input type="text" class="form-control" name="idt"  value="<?=$a->id_tour?>" readonly>
+              </div>
+              <div class="form-group">
+                Nama Tour
+                <input type="text" class="form-control" name="nama"  value="<?=$a->nama_tour?>" readonly>
+              </div>
+              <div class="form-group">
+                Tanggal Berangkat
+                <input type="text" class="form-control" name="tgl"  value="<?=$a->tanggal_tour?>" readonly>
+              </div>
+              <div class="form-group">
+                Hari
+                <input type="text" class="form-control" name="hari"  value="<?=$a->hari_tour?>" readonly>
+              </div>
+              <div class="form-group">
+                Harga Normal
+                <input type="text" class="form-control" name="harga1"  value="<?=$a->harga_tour?>" readonly>
               </div>
 
               <div class="form-group">
-                Address
-                <textarea name="alamat" id="" cols="30" rows="7" class="form-control"  required></textarea>
+                Harga Promo
+                <input type="text" class="form-control" name="harga2"  value="<?=$a->harga_tour?>" readonly>
               </div>
               <div class="form-group">
-                Phone
-                <input type="number" class="form-control"  name="phone" required>
+                Tourguide
+                <input type="text" class="form-control" name="tg"  value="<?=$a->nama_pengguna?>" readonly>
               </div>
-              <div class="form-group" hidden>
+              <div class="form-group">
                 Status
-                <input type="text" class="form-control"  value ="Customer" name="status" required>
+                <input type="number" class="form-control" name="status_order"  value="0" readonly>
               </div>
+
               <div class="form-group">
-                <input type="submit" value="Submit" id="submit" class="btn btn-primary py-3 px-5 " >
+                <input type="submit" value="Confirm" id="submit" class="btn btn-primary py-3 px-5 " >
               </div>
             </form>
           </div>
         </div>
-
-      </div>
-    </section>
-
-
+</section>
 
 
 
@@ -225,7 +137,6 @@
     <footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row mb-5">
-
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About <span><a href="index.html">EXPLORE</a></span></h2>
@@ -267,22 +178,7 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-  <script>
-  var check = function() {
-  if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
-    document.getElementById('message').style.color = '#dea9a9';
-    document.getElementById('message').style.fontSize = '10pt';
-    document.getElementById('message').innerHTML = 'match';
-      $('#submit').prop('disabled', false);
-  } else {
-    document.getElementById('message').style.color = '#a1a09f';
-    document.getElementById('message').style.fontSize = '10pt';
-    document.getElementById('message').innerHTML = 'does not match';
-    $('#submit').prop('disabled', true);
-  }
-  }
 
-  </script>
 
   <script src="<?=base_url()?>/asset2/js/jquery.min.js"></script>
   <script src="<?=base_url()?>/asset2/js/jquery-migrate-3.0.1.min.js"></script>

@@ -17,7 +17,7 @@ class Home extends CI_Controller{
           $this->load->model('M_Contact');
       }
 
-    
+
       function getDosenByAjax(){
         $kota=$this->input->post('kota'); //dollar disni
         $where=array('kota'=>$kota); //sama kyk dollar disini

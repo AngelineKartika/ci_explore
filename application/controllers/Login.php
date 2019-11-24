@@ -104,10 +104,39 @@ class Login extends CI_Controller{
         }
       }
 
+      function register()
+     {
+         $this->load->view('V_Register');
+     }
+
+     function insertCust(){
+          $id = $this->input->post('id');
+          $name = $this->input->post('nama');
+          $gender = $this->input->post('gender');
+          $email = $this->input->post('email');
+          $password = $this->input->post('password');
+          $address = $this->input->post('alamat');
+          $phone = $this->input->post('phone');
+          $status= $this->input->post('status');
+          $data=array(
+              'id_pengguna'       => $id,
+              'nama_pengguna'     => $name,
+              'kata_sandi'        => md5($password),
+              'email_pengguna'    => $email,
+              'alamat_pengguna'   => $address,
+              'telp_pengguna'     => $phone,
+              'jenis_kelamin'     => $gender,
+              'status_pengguna'   => $status,
+          );
+          $this->M_Pengguna->insertTable('pengguna',$data);
+          redirect('Login');
+        }
+
       function logout(){
           $this->session->sess_destroy();
           redirect('home');
       }
+
 
 }
 ?>

@@ -219,11 +219,11 @@
 	    	<div class="row">
 					<div class="col-md-12">
 						<div class="search-wrap-1 ftco-animate p-4">
-              <form action="<?php echo base_url().'Order/insertData';?>" method="post" class="search-property-1">
+              <form action="<?php echo base_url().'Order/confirmData';?>" method="post" class="search-property-1">
 
 		        		<div class="row">
 
-		        			<div class="col-lg align-items-end" hidden>
+		        			<div class="col-lg align-items-end" >
                       <div class="form-group">
                           <label for="company" class=" form-control-label">ID</label>
                           <?php
@@ -231,7 +231,7 @@
                           $baris=mysqli_num_rows($queryp);
                           $barisbaru=$baris+1;
                           ?>
-                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" >
+                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" disabled>
                       </div>
                     </div>
 
@@ -274,6 +274,8 @@
 			              </div>
 
 		        			</div>
+
+
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Date of the trip</label>
@@ -292,6 +294,14 @@
                       </select>
 			              </div>
 		        			</div>
+
+                  <div class="col-lg align-items-end" hidden>
+                    <div class="form-group">
+                      <label for="#">Status</label>
+                      <input type="number" class="form-control" name="status_order"  value="0" readonly>
+                    </div>
+                  </div>
+
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Day(s)</label>
