@@ -16,9 +16,9 @@ class Page extends CI_Controller{
          $this->load->view('V_Admin',$data);//blm diganti
       }
       else if($this->session->userdata('status_pengguna')==='Tourguide'){
-        $this->load->model('M_Tourguide');
-        $data['tourguide'] =  $this->M_Tourguide->tampilkanData()->result(); 
-        $this->load->view('V_Tourguide',$data);//blm diganti
+        $this->load->model('M_Tour');
+        $data['tour'] =  $this->M_Tour->tampilkanData2()->result(); 
+        $this->load->view('V_Tour',$data);//blm diganti
      }
      else if($this->session->userdata('status_pengguna')==='Customer'){
       $this->load->model('M_Customer');

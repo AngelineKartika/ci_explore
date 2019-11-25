@@ -14,6 +14,18 @@ function tampilkanData(){
   WHERE d.status_pengguna='Tourguide'");
 }
 
+function tampilkanData2(){
+  $id_pengguna= $this->session->userdata("id_pengguna");
+  return $this->db->query("SELECT a.id_tour, a.id_kota, a.nama_tour,a.tanggal_tour,a.hari_tour,
+    a.harga_tour,a.id_tg,a.kuota, a.id_promo,b.id_kota, b.nama_kota,c.id_promo,
+    c.nama_promo,d.id_pengguna,d.nama_pengguna
+    FROM tour a
+    join kota b ON a.id_kota = b.id_kota
+    JOIN promo c ON a.id_promo=c.id_promo
+  JOIN pengguna d ON a.id_tg=d.id_pengguna
+  WHERE d.status_pengguna='Tourguide' AND d.id_pengguna= '$id_pengguna';");
+}
+
 
 
 function insertTable($a,$b){

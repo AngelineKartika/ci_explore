@@ -39,7 +39,9 @@ class Login extends CI_Controller{
             'status_pengguna'   => $status,
   
         );
+        
         $this->M_Pengguna->insertTable('pengguna',$data);
+        echo $this->session->set_flashdata('msg','Your account has been registered');
         redirect('Login');
   
       }
