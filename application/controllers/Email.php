@@ -13,6 +13,7 @@ class Email extends CI_Controller {
       $tangkapEmail   =$this->input->post('email');
       $tangkapTopik   =$this->input->post('topik');
       $tangkapPesan   =$this->input->post('pesan');
+      $tangkapStatus   =$this->input->post('status');
 
 
       $data=array(//petik satu itu dalam field db
@@ -20,7 +21,8 @@ class Email extends CI_Controller {
           'email_pengguna'   => $tangkapEmail,
           'topik_pesan'      => $tangkapTopik,
           'waktu_pesan'      => date('Y-m-d H:i:s'),
-          'pesan'            => $tangkapPesan
+          'pesan'            => $tangkapPesan,
+          'status_pesan'     => $tangkapStatus
 
       );
 
@@ -48,7 +50,7 @@ class Email extends CI_Controller {
       $this->email->from('siuph2017@gmail.com',$tangkapNama);
 
       // Email penerima
-      $this->email->to('angelinekartikaa@gmail.com');
+      $this->email->to('exploreyukk@gmail.com');
 
       // Subject
       $this->email->subject($tangkapTopik);
@@ -57,8 +59,8 @@ class Email extends CI_Controller {
       $this->email->message($tangkapPesan);
 
       if ($this->email->send()) {
-          echo 'Sukses! email berhasil dikirim.';
-          redirect('#contact-section');
+          
+          redirect('Pesan/contactBerhasil');
       } else {
           echo 'Error! email tidak dapat dikirim.';
       }

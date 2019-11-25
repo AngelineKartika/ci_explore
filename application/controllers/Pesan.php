@@ -16,11 +16,26 @@ class Pesan extends CI_Controller{
 
     }
 
+    function sudah()
+    {
+        $data['pesan']= $this->M_Pesan->tampilkanDataTerbalas()->result();
+        $this->load->view('V_Pesan_Terbalas',$data);
+
+    }
+
     function hapusData($id){
-      $where=array('id_pesan'=>$id);
-      $this->M_Pesan->hapusRecord($where,'pesan');
-      redirect('Pesan');
+        $this->M_Pesan->kirimDataTerbalas($id);
+        $data['pesan']= $this->M_Pesan->tampilkanDataTerbalas()->result();
+        $this->load->view('V_Pesan_Terbalas',$data);
+        
+        
+    }
+
+    function contactBerhasil(){
+      $data['pesan']= $this->M_Pesan->tampilkanData()->result();
+        $this->load->view('contactUsTerkirim',$data);
     }
 
 
   }
+  ?>

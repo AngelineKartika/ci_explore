@@ -19,11 +19,6 @@
                     <a href="form.html">
                         <i class="far fa-check-square"></i>Finished Reservation</a>
                 </li>
-                <li>
-                    <a href="calendar.html">
-                        <i class="fas fa-calendar-alt"></i>Calendar</a>
-                </li>
-
                 
             </ul>
         </nav>

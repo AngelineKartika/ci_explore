@@ -11,18 +11,15 @@
 
                 <li>
                     <a href="<?=base_url()?>Tour">
-                        <i class="fas fa-table"></i>Tour</a>
+                        <i class="fas fa-table"></i>My Tour</a>
                 </li>
 
                 <li>
-                    <a href="calendar.html">
-                        <i class="fas fa-calendar-alt"></i>Calendar</a>
+                    <a href="<?=base_url()?>Order">
+                        <i class="fas fa-calendar-alt"></i>My Customer</a>
                 </li>
 
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Customer Data</a>
-                </li>
+                
               
             </ul>
         </nav>
