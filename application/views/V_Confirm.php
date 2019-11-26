@@ -81,15 +81,15 @@
        <?php foreach ($order_pending as $a)?>
        <form action="<?php echo base_url().'Order/insertData';?>" method="post" class="bg-light p-4 p-md-5 contact-form" >
 
-              <div class="form-group">
+              <div class="form-group" hidden>
                 Id Order
                 <input type="text" class="form-control" name="ido"  value="<?=$a->id_order?>" readonly>
               </div>
-              <div class="form-group">
+              <div class="form-group" hidden>
                 Id TG
                 <input type="text" class="form-control" name="idtg"  value="<?=$a->id_tg?>" readonly>
               </div>
-              <div class="form-group">
+              <div class="form-group" hidden>
                 Id Tour
                 <input type="text" class="form-control" name="idt"  value="<?=$a->id_tour?>" readonly>
               </div>
@@ -107,20 +107,29 @@
               </div>
               <div class="form-group">
                 Harga Normal
-                <input type="text" class="form-control" name="harga1"  value="<?=$a->harga_tour?>" readonly>
+                <input type="text" class="form-control" name="harga"  value="<?=$a->harga_tour?>" readonly>
               </div>
 
               <div class="form-group">
                 Harga Promo
-                <input type="text" class="form-control" name="harga2"  value="<?=$a->harga_tour?>" readonly>
+                <?php
+                $x=$a->harga_tour;
+                $y=$a->diskon_promo;
+                $z=$x-$y;
+                ?>
+                <input type="text" class="form-control" name="harga_promo"  value="<?=$z?>" readonly>
               </div>
               <div class="form-group">
                 Tourguide
                 <input type="text" class="form-control" name="tg"  value="<?=$a->nama_pengguna?>" readonly>
               </div>
-              <div class="form-group">
+              <div class="form-group" hidden>
                 Status
                 <input type="number" class="form-control" name="status_order"  value="0" readonly>
+              </div>
+              <div class="form-group">
+                Jumlah Orang
+                <input type="number" class="form-control" name="jumlah_orang">
               </div>
 
               <div class="form-group">

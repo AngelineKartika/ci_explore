@@ -24,6 +24,8 @@ class Order extends CI_Controller{
         $tangkapPgn    = $this->session->userdata("id_pengguna");
         $tangkapTg     =$this->input->post('id_tg');
         $tangkapStatus =$this->input->post('status_order');
+        $tangkapPromo =$this->input->post('id_promo');
+
 
 
         $data=array(
@@ -31,7 +33,9 @@ class Order extends CI_Controller{
             'id_tour'           => $tangkapId,
             'id_cust'           => $tangkapPgn,
             'id_tg'             => $tangkapTg,
-            'status_order'      => $tangkapStatus
+            'status_order'      => $tangkapStatus,
+            'id_promo'          => $tangkapPromo,
+
                 );
 
       $this->M_Order->insertTable('order_pending',$data);
@@ -49,30 +53,36 @@ class Order extends CI_Controller{
         $tangkapPgn    = $this->session->userdata("id_pengguna");
         $tangkapTg     =$this->input->post('idtg');
         $tangkapStatus =$this->input->post('status_order');
-
+        $tangkapPromo =$this->input->post('harga_promo');
+        $tangkapJumlah =$this->input->post('jumlah_orang');
 
         $data=array(
             'id_order'          => $tangkapIdo,
             'id_tour'           => $tangkapId,
             'id_cust'           => $tangkapPgn,
             'id_tg'             => $tangkapTg,
-            'status_order'      => $tangkapStatus
+            'status_order'      => $tangkapStatus,
+            'harga_promo'       => $tangkapPromo,
+            'jumlah_orang'      => $tangkapJumlah
                 );
 
           $data2=array(
               'id_order'          => $tangkapIdo,
               );
 
-        $this->M_Order->insertTable('order_cust',$data);
+        $this->M_Order->insertTable2('order_cust',$data,$tangkapJumlah);
         $this->M_Order->deleteOrderPending('order_pending',$data2);
 
         $message = "Booking successful!";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        redirect('Home');
+        redirect('#destination-section');
       }
       else{
         redirect('Login');}
     }
+
+
+
 
 
 

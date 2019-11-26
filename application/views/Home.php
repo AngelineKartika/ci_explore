@@ -17,7 +17,7 @@
 
           type: 'POST',
 
-          url: "http://localhost/explore/ci_explore/Tour/getDataByAjax",
+          url: "http://localhost:8888/Explore/ci_explore/Tour/getDataByAjax",
 
           dataType : "JSON",
 
@@ -62,7 +62,7 @@
 
           type: 'POST',
 
-          url: "http://localhost/explore/ci_explore/Home/getDosenByAjax",
+          url: "http://localhost:8888/Explore/ci_explore/Home/getDosenByAjax",
 
         dataType : "JSON",
 
@@ -227,7 +227,7 @@
                       <div class="form-group">
                           <label for="company" class=" form-control-label">ID</label>
                           <?php
-                          $queryp=mysqli_query($koneksi,"SELECT * FROM order_cust");
+                          $queryp=mysqli_query($koneksi,"SELECT *FROM order_cust");
                           $baris=mysqli_num_rows($queryp);
                           $barisbaru=$baris+1;
                           ?>
@@ -246,6 +246,25 @@
 
                             <option value = "<?php echo $list->id_tg?>">
                                 <?php echo $list->id_tg?>
+                            </option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+  			              </div>
+  		        			</div>
+
+                    <div class="col-lg align-items-end" hidden>
+  		        				<div class="form-group">
+  		        					<label for="#">ID Promo</label>
+                        <select name = "id_promo" class="form-control">
+                            <?php
+                                foreach($tour as $list)
+                                {
+                            ?>
+
+                            <option value = "<?php echo $list->id_promo?>">
+                                <?php echo $list->id_promo?>
                             </option>
                             <?php
                                 }
@@ -564,9 +583,6 @@
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Subject" name="topik">
-			  </div>
-			  <div class="form-group" hidden>
-                <input type="text" class="form-control" placeholder="Subject" name="status" value="0">
               </div>
               <div class="form-group">
                 <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
@@ -610,7 +626,7 @@
 		          		</div>
 		          		<div>
 			          		<h3 class="mb-3">Email Address</h3>
-				            <p><a href="mailto:info@yoursite.com">exploreyukk@gmail.com</a></p>
+				            <p><a href="mailto:info@yoursite.com">exploreyuk@gmail.com</a></p>
 			            </div>
 			          </div>
 		          </div>
