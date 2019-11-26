@@ -18,14 +18,15 @@ class Order extends CI_Controller{
     }
 
     function confirmData(){
+
       if($this->session->userdata("logged_in")){
         $tangkapIdo    =$this->input->post('id');
         $tangkapId     =$this->input->post('id_tour');
         $tangkapPgn    = $this->session->userdata("id_pengguna");
         $tangkapTg     =$this->input->post('id_tg');
         $tangkapStatus =$this->input->post('status_order');
-        $tangkapPromo =$this->input->post('id_promo');
-
+        $tangkapPromo  =$this->input->post('id_promo');
+        $tangkapKuota  =$this->input->post('kuota');
 
 
         $data=array(
@@ -37,12 +38,17 @@ class Order extends CI_Controller{
             'id_promo'          => $tangkapPromo,
 
                 );
+            if($tangkapKuota<=0){
+              redirect('Confirm/full');
+            }
+            else{
+            $this->M_Order->insertTable('order_pending',$data);
+            redirect('Confirm');}
+           }
 
-      $this->M_Order->insertTable('order_pending',$data);
-      redirect('Confirm');}
       else{
         redirect('Login');}
-    }
+      }
 
 
     function insertData()

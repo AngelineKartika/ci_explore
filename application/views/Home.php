@@ -37,6 +37,7 @@
 
             $('[name="id_tg"]').val(data.tg);
 
+            $('[name="kuota"]').val(data.kuota);
 
             });
           }
@@ -84,6 +85,8 @@
             $('[name="id"]').val(data.id_tour);
 
             $('[name="tg"]').val(data.id_tg);
+
+            $('[name="kuota"]').val(data.kuota);
 
 
 
@@ -223,7 +226,7 @@
 
 		        		<div class="row">
 
-		        			<div class="col-lg align-items-end" >
+		        			<div class="col-lg align-items-end" hidden>
                       <div class="form-group">
                           <label for="company" class=" form-control-label">ID</label>
                           <?php
@@ -246,6 +249,25 @@
 
                             <option value = "<?php echo $list->id_tg?>">
                                 <?php echo $list->id_tg?>
+                            </option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+  			              </div>
+  		        			</div>
+
+                    <div class="col-lg align-items-end" hidden>
+  		        				<div class="form-group">
+  		        					<label for="#">Kuota</label>
+                        <select name = "kuota" class="form-control">
+                            <?php
+                                foreach($tour as $list)
+                                {
+                            ?>
+
+                            <option value = "<?php echo $list->kuota?>">
+                                <?php echo $list->kuota?>
                             </option>
                             <?php
                                 }
@@ -359,13 +381,14 @@
 			              </div>
 		        			</div>
 
-		        			<div class="col-lg align-self-end">
+                  <div class="col-lg align-self-end">
 		        				<div class="form-group">
 		        					<div class="form-field">
 				                <input type="submit" value="Book" class="form-control btn btn-primary">
 				              </div>
 			              </div>
 		        			</div>
+
 		        		</div>
 		        	</form>
 

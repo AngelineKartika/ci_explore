@@ -14,6 +14,10 @@ class Confirm extends CI_Controller{
           $this->load->view('V_Confirm',$data);
       }
 
+      function full(){
+        $this->load->view('V_Full');
+      }
+
 
   }
 ?>

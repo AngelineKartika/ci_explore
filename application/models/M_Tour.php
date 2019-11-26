@@ -68,6 +68,7 @@ function get_data_by_ajax($where){
           'hari'=>$data->hari_tour,
           'id'=>$data->id_tour,
           'tg'=>$data->id_tg,
+          'kuota'=>$data->kuota
           );
         }
       }
