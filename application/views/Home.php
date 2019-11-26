@@ -17,7 +17,7 @@
 
           type: 'POST',
 
-          url: "http://localhost:8888/Explore/ci_explore/Tour/getDataByAjax",
+          url: "http://localhost/explore/ci_explore/Tour/getDataByAjax",
 
           dataType : "JSON",
 
@@ -62,7 +62,7 @@
 
           type: 'POST',
 
-          url: "http://localhost:8888/Explore/ci_explore/Home/getDosenByAjax",
+          url: "http://localhost/explore/ci_explore/Home/getDosenByAjax",
 
         dataType : "JSON",
 
@@ -227,11 +227,11 @@
                       <div class="form-group">
                           <label for="company" class=" form-control-label">ID</label>
                           <?php
-                          $queryp=mysqli_query($koneksi,"SELECT *FROM order_cust");
+                          $queryp=mysqli_query($koneksi,"SELECT * FROM order_cust");
                           $baris=mysqli_num_rows($queryp);
                           $barisbaru=$baris+1;
                           ?>
-                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" disabled>
+                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" readonly>
                       </div>
                     </div>
 
@@ -564,6 +564,9 @@
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Subject" name="topik">
+			  </div>
+			  <div class="form-group" hidden>
+                <input type="text" class="form-control" placeholder="Subject" name="status" value="0">
               </div>
               <div class="form-group">
                 <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
@@ -607,7 +610,7 @@
 		          		</div>
 		          		<div>
 			          		<h3 class="mb-3">Email Address</h3>
-				            <p><a href="mailto:info@yoursite.com">exploreyuk@gmail.com</a></p>
+				            <p><a href="mailto:info@yoursite.com">exploreyukk@gmail.com</a></p>
 			            </div>
 			          </div>
 		          </div>
