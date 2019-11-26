@@ -231,7 +231,7 @@
                           $baris=mysqli_num_rows($queryp);
                           $barisbaru=$baris+1;
                           ?>
-                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" disabled>
+                          <input type="text" id="company" class="form-control" name="id" value="<?php echo "O-".$barisbaru?>" readonly>
                       </div>
                     </div>
 
@@ -246,6 +246,25 @@
 
                             <option value = "<?php echo $list->id_tg?>">
                                 <?php echo $list->id_tg?>
+                            </option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+  			              </div>
+  		        			</div>
+
+                    <div class="col-lg align-items-end" hidden>
+  		        				<div class="form-group">
+  		        					<label for="#">ID Promo</label>
+                        <select name = "id_promo" class="form-control">
+                            <?php
+                                foreach($tour as $list)
+                                {
+                            ?>
+
+                            <option value = "<?php echo $list->id_promo?>">
+                                <?php echo $list->id_promo?>
                             </option>
                             <?php
                                 }
