@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="<?=base_url()?>Home">
+        <a href="">
             <img src="<?=base_url();?>asset/images/icon/explore.png" alt="Cool Admin" />
         </a>
     </div>
