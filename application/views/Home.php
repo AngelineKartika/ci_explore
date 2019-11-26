@@ -17,7 +17,7 @@
 
           type: 'POST',
 
-          url: "http://localhost:8888/Explore/ci_explore/Tour/getDataByAjax",
+          url: "http://localhost/explore/ci_explore/Tour/getDataByAjax",
 
           dataType : "JSON",
 
@@ -63,7 +63,7 @@
 
           type: 'POST',
 
-          url: "http://localhost:8888/Explore/ci_explore/Home/getDosenByAjax",
+          url: "http://localhost/explore/ci_explore/Home/getDosenByAjax",
 
         dataType : "JSON",
 
@@ -585,7 +585,7 @@
 
 
       <hr>
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -610,6 +610,10 @@
               <div class="form-group">
                 <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject" name="status" value="0" hidden>
+              </div>
+              
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
