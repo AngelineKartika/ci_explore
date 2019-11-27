@@ -41,7 +41,7 @@ class Login extends CI_Controller{
         );
         
         $this->M_Pengguna->insertTable('pengguna',$data);
-        echo $this->session->set_flashdata('msg','Your account has been registered');
+        echo $this->session->set_flashdata('msg','Your account is listed on the pending list');
         redirect('Login');
   
       }
@@ -57,8 +57,8 @@ class Login extends CI_Controller{
         );
 
         $baris = $this->M_Login->check_user('pengguna',$where)->num_rows();
-
-        if($baris > 0){
+        $data = $this->M_Login->check_user('pengguna',$where)->row_array();
+        if($baris > 0 && $data['status_aktif']==1){
             $data = $this->M_Login->check_user('pengguna',$where)->row_array();
             $id  =$data['id_pengguna'];
             $nama=$data['nama_pengguna'];
@@ -99,7 +99,13 @@ class Login extends CI_Controller{
                 redirect($status);
             }
         }
+        
 
+        else if($data['status_aktif']=='0'){
+            echo $this->session->set_flashdata('msg','Your account has not been registered');
+            redirect('login');
+        }
+        
         else{
             echo $this->session->set_flashdata('msg','Username or Password is Wrong');
             redirect('login');

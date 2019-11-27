@@ -12,7 +12,6 @@ class Customer extends CI_Controller{
      function index()
     {
       $data['customer'] = $this->M_Customer->tampilkanData()->result();
-      $data['pengguna'] = $this->M_Customer->tampilkanData()->result();
       $this->load->view('V_Customer',$data);
 
     }

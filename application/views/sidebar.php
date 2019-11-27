@@ -7,9 +7,16 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
+
+                <li class="active has-sub">
+                    
+                        <a href="<?=base_url()?>Page"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                </li>
+
                 <li class="active has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>Master Data</a>
+                        <i class="fas fa-database"></i>Master Data</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                           <a href="<?=base_url()?>Pengguna">User</a>
@@ -34,6 +41,16 @@
                         </li>
                         <li>
                             <a href="<?=base_url()?>Tour">Tour</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="active has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-user"></i>Member Pending</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                          <a href="<?=base_url()?>Pengguna/penggunaTidakAktif">Member Pending</a>
                         </li>
                     </ul>
                 </li>

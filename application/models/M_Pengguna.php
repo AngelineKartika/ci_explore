@@ -8,13 +8,29 @@ function tampilkanData(){
   return $query;
 }
 
+function tampilkanDataAktif(){
+  return $this->db->query("SELECT * FROM pengguna
+  WHERE status_aktif='1'");
+}
+
+function tampilkanDataTidakAktif(){
+  return $this->db->query("SELECT * FROM pengguna
+  WHERE status_aktif='0'");
+}
+
+function pindahDataAktif($id_pengguna){
+  return $this->db->query("UPDATE pengguna SET status_aktif='1' WHERE id_pengguna= '$id_pengguna'");
+}
+
+
+
 function tampilkanData2(){
   return $this->db->query("SELECT * FROM pengguna a
   WHERE a.status_pengguna='Tourguide'");
 }
 
 function hitungPengguna(){
-  return $this->db->query("SELECT COUNT(*) as total_pengguna FROM pengguna");
+  return $this->db->query("SELECT COUNT(*) as total_pengguna FROM pengguna WHERE status_aktif='1'");
 }
 
 function hitungOrder(){

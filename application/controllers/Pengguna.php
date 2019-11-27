@@ -11,7 +11,7 @@ class Pengguna extends CI_Controller{
 
      function index()
     {
-        $data['pengguna']= $this->M_Pengguna->tampilkanData()->result();
+        $data['pengguna']= $this->M_Pengguna->tampilkanDataAktif()->result();
         $this->load->view('V_Pengguna',$data);
 
     }
@@ -20,6 +20,18 @@ class Pengguna extends CI_Controller{
     function tambahData()
     {
         $this->load->view('V_Input_Pengguna');
+    }
+
+    function penggunaTidakAktif(){
+        $data['pengguna']= $this->M_Pengguna->tampilkanDataTidakAktif()->result();
+        $this->load->view('V_Pengguna_Pending',$data);
+    }
+
+    function pindahData($id)
+    {   
+        $this->M_Pengguna->pindahDataAktif($id);
+        $data['pengguna']= $this->M_Pengguna->tampilkanDataAktif()->result();
+        $this->load->view('V_Pengguna',$data);
     }
 
     function insertData()
@@ -32,6 +44,7 @@ class Pengguna extends CI_Controller{
         $tangkapTelp    =$this->input->post('telp');
         $tangkapJK      =$this->input->post('jk');
         $tangkapStatus  =$this->input->post('status');
+        $tangkapStatusAktif  =$this->input->post('status_aktif');
 
 
         $data=array(
@@ -42,7 +55,8 @@ class Pengguna extends CI_Controller{
             'alamat_pengguna'   => $tangkapAlamat,
             'telp_pengguna'     => $tangkapTelp,
             'jenis_kelamin'     => $tangkapJK,
-            'status_pengguna'   => $tangkapStatus
+            'status_pengguna'   => $tangkapStatus,
+            'status_aktif'      => $tangkapStatusAktif
                 );
 
         $this->M_Pengguna->insertTable('pengguna',$data);

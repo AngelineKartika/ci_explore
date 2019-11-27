@@ -219,11 +219,17 @@
                                           <label for="vat" class=" form-control-label">No Telepon</label>
                                           <input type="text" id="vat" class="form-control" name="telp">
                                       </div>
-                                      <div class="form-group">
+                                      
+                                      <div class="form-group" >
                                           <label for="vat" class=" form-control-label">Jenis Kelamin</label>
-                                          <input type="text" id="vat" class="form-control" name="jk">
+                                          <select name = "jk" class="form-control">
+                                            <option value = "l" on>Laki-Laki</option>
+                                            <option value = "p">Perempuan</option>
+                                            
+                                          </select>
                                       </div>
-                                      <div class="form-group">
+
+                                      <div class="form-group" >
                                           <label for="vat" class=" form-control-label">Status</label>
                                           <select name = "status" class="form-control">
                                             <option value = "Customer" on> Customer</option>
@@ -233,24 +239,9 @@
                                       </div>
 
                                       <div class="form-group" style="display:none">
-                                          <label for="company" class=" form-control-label">Promo</label>
-                                          <select name = "id_promo" class="form-control">
-                                              <?php
-                                                  foreach($promo as $list)
-                                                  {
-                                              ?>
-
-                                              <option value = "<?php echo $list->id_promo ?>">
-                                                  <?php echo $list->id_promo . " - " . $list->nama_promo?>
-                                              </option>
-                                              <?php
-                                                  }
-                                              ?>
-                                          </select>
+                                          <label for="vat" class=" form-control-label">Status Aktif</label>
+                                          <input type="number" class="form-control" name="status_aktif" value="1">
                                       </div>
-
-
-
 
 
                                       <button type="submit" class="btn btn-primary ">Submit</button> </a>
