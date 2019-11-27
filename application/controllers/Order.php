@@ -12,8 +12,34 @@ class Order extends CI_Controller{
      function index()
     {
         $data['order_cust']= $this->M_Order->tampilkanData()->result();
-        $this->load->view('V_Order',$data);
+        //$this->load->view('V_Order',$data);
         $this->load->view('V_Confirm',$data);
+
+    }
+
+    function belum()
+    {
+        $data['order_cust']= $this->M_Order->tampilkanDataBelum()->result();
+        $this->load->view('V_Order',$data);
+    }
+
+    function sudah()
+    {
+        $data['order_cust']= $this->M_Order->tampilkanDataSelesai()->result();
+        $this->load->view('V_Order_Selesai',$data);
+
+    }
+
+    function belumCust()
+    {
+        $data['order_cust']= $this->M_Order->tampilkanDataBelumCust()->result();
+        $this->load->view('V_Order_Cust',$data);
+    }
+
+    function sudahCust()
+    {
+        $data['order_cust']= $this->M_Order->tampilkanDataSelesaiCust()->result();
+        $this->load->view('V_Order_Selesai_Cust',$data);
 
     }
 
@@ -61,6 +87,7 @@ class Order extends CI_Controller{
         $tangkapStatus =$this->input->post('status_order');
         $tangkapPromo =$this->input->post('harga_promo');
         $tangkapJumlah =$this->input->post('jumlah_orang');
+        
 
         $data=array(
             'id_order'          => $tangkapIdo,
@@ -69,14 +96,15 @@ class Order extends CI_Controller{
             'id_tg'             => $tangkapTg,
             'status_order'      => $tangkapStatus,
             'harga_promo'       => $tangkapPromo,
-            'jumlah_orang'      => $tangkapJumlah
+            'jumlah_orang'      => $tangkapJumlah,
+            'tanggal_order'     => date('Y-m-d H:i:s')
                 );
 
           $data2=array(
               'id_order'          => $tangkapIdo,
               );
 
-        $this->M_Order->insertTable2('order_cust',$data,$tangkapJumlah);
+        $this->M_Order->insertTable2('order_cust',$data,$tangkapJumlah,$tangkapId);
         $this->M_Order->deleteOrderPending('order_pending',$data2);
 
         $message = "Booking successful!";
@@ -86,6 +114,14 @@ class Order extends CI_Controller{
       else{
         redirect('Login');}
     }
+
+    function hapusData($id){
+      $this->M_Order->kirimDataSelesai($id);
+      $data['order_cust']= $this->M_Order->tampilkanDataSelesai()->result();
+      $this->load->view('V_Order_Selesai',$data);
+      
+      
+  }
 
 
 

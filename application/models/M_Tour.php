@@ -28,6 +28,7 @@ function tampilkanData2(){
 
 
 
+
 function insertTable($a,$b){
   $this->db->insert($a,$b);
 }

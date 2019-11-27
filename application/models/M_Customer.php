@@ -9,6 +9,21 @@ function tampilkanData(){
   WHERE a.status_pengguna='Customer'");
 }
 
+function tampilkanData2(){//data customernya si tourguide
+  $id_pengguna= $this->session->userdata("id_pengguna");
+
+  return $this->db->query("SELECT a.id_cust, a.id_tg,
+  b.nama_pengguna, b.email_pengguna, b.alamat_pengguna, b.telp_pengguna, b.status_pengguna, c.id_tg FROM order_cust a 
+  JOIN pengguna b on a.id_cust = b.id_pengguna
+  JOIN tour c on a.id_tg = c.id_tg
+  WHERE a.id_tg='$id_pengguna' GROUP BY id_cust");
+
+  /*return $this->db->query("SELECT a.id_pengguna, a.nama_pengguna, a.kata_sandi,
+  a.email_pengguna, a.alamat_pengguna, a.telp_pengguna, a.status_pengguna, b.id_tg FROM pengguna a JOIN order_cust b on a.id_pengguna = b.id_cust
+  WHERE b.id_tg='$id_pengguna'");*/
+}
+
+
 
 
 function insertTable($a,$b){

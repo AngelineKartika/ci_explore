@@ -9,15 +9,18 @@
             <ul class="list-unstyled navbar__list">
 
 
-                <li>
-                    <a href="<?=base_url()?>Tour">
-                        <i class="fas fa-table"></i>Reservation</a>
-                </li>
+            <li class="active has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-file"></i>Reservation</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                          <a href="<?=base_url()?>Order/belumCust">Current Reservation</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url()?>Order/sudahCust">Finished Reservation</a>
+                        </li>
 
-
-                <li>
-                    <a href="form.html">
-                        <i class="far fa-check-square"></i>Finished Reservation</a>
+                    </ul>
                 </li>
                 
             </ul>

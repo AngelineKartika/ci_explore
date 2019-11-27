@@ -63,6 +63,7 @@ class Tour extends CI_Controller{
       $data['tour'] = $this->M_Tour->pilih_record('tour',$where)->result();
       $data['kota'] = $this->M_Kota->tampilkanData()->result();
       $data['promo'] = $this->M_Promo->tampilkanData()->result();
+      $data['pengguna'] = $this->M_Pengguna->tampilkanData2()->result();
       $this->load->view('V_Edit_Tour',$data);
     }
 

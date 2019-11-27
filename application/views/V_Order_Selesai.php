@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,24 +15,24 @@
 
     <!-- Fontfaces CSS-->
     <link href="<?=base_url()?>/asset/css/font-face.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="<?=base_url()?>/asset/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="<?=base_url()?>/asset/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="<?=base_url()?>/asset/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="<?=base_url()?>/asset/css/theme.css" rel="stylesheet" media="all">
+    <link href="<?=base_url()?>asset/css/theme.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -43,8 +44,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-
-                            <img src="<?=base_url()?>/asset/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="asset/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -177,63 +177,41 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-
                         <div class="row">
-                            <div class="col-lg-9">
-                              <div class="card">
-                                  <div class="card-header">
-                                      <strong>Edit Profile</strong>
+                            <div class="col-lg-12">
 
-                                  </div>
-                                  <?php foreach ($pengguna as $a)?>
-                                  <form action="<?php echo base_url().'Account/UpdateData';?>" method="post">
-                                  <div class="card-body card-block">
-                                      <div class="form-group">
-                                          <label for="company" class=" form-control-label">ID</label>
-                                          <input type="text" id="company" class="form-control" name="id" value="<?=$a->id_pengguna?>" readonly>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">Nama</label>
-                                          <input type="text" id="vat" class="form-control" name="nama" value="<?=$a->nama_pengguna?>">
-                                      </div>
+                                <div class="table-responsive table--no-card m-b-30">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th> ID Order</th>
+                                                <th> Tour Name</th>
+                                                <th> Customer Name</th>
+                                                <th> Price</th>
+                                                <th> Handled by</th>
+                                                
 
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">Email</label>
-                                          <input type="text" id="vat" class="form-control" name="email" value="<?=$a->email_pengguna?>"readonly>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">Alamat</label>
-                                          <input type="text" id="vat" class="form-control" name="alamat" value="<?=$a->alamat_pengguna?>">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">No Telepon</label>
-                                          <input type="text" id="vat" class="form-control" name="telp" value="<?=$a->telp_pengguna?>">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">Jenis Kelamin</label>
-                                          <input type="text" id="vat" class="form-control" name="jk" value="<?=$a->jenis_kelamin?>" readonly>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="vat" class=" form-control-label">Status</label>
-                                          <input type="text" id="vat" class="form-control" name="status" value="<?=$a->status_pengguna?>" readonly>
-
-                                      </div>
-                                    
+                                            </tr>
+                                        </thead>
+                                        <?php
+                                        foreach($order_cust as $a){?>
+                                        <tbody>
+                                            <tr>
+                                              <td><?php echo $a -> id_order?></td>
+                                              <td><?php echo $a -> nama_tour?></td>
+                                              <td><?php echo $a -> nama_pengguna?></td>
+                                              <td><?php echo $a -> harga_promo?></td>
+                                              <td><?php echo $a -> id_tg?></td>
 
 
+                                             
 
+                                            </tr>
+                                              <?php }?>
 
-                                      <button type="submit" class="btn btn-primary ">Submit</button> </a>
-                                    </form>
-
-                                      </div>
-
-                                  </div>
-                              </div>
-
-
-
-
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>
@@ -250,28 +228,28 @@
 
     <!-- Jquery JS-->
     <!-- Jquery JS-->
-    <script src="<?=base_url()?>/asset/vendor/jquery-3.2.1.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="<?=base_url()?>/asset/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="<?=base_url()?>/asset/vendor/slick/slick.min.js">
+    <script src="<?=base_url()?>asset/vendor/slick/slick.min.js">
     </script>
-    <script src="<?=base_url()?>/asset/vendor/wow/wow.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/animsition/animsition.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="<?=base_url()?>asset/vendor/wow/wow.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/animsition/animsition.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="<?=base_url()?>/asset/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/counter-up/jquery.counterup.min.js">
+    <script src="<?=base_url()?>asset/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="<?=base_url()?>/asset/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="<?=base_url()?>/asset/vendor/select2/select2.min.js">
+    <script src="<?=base_url()?>asset/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="<?=base_url()?>asset/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="<?=base_url()?>asset/vendor/select2/select2.min.js">
     </script>
 
     <!-- Main JS-->
-    <script src="<?=base_url()?>/asset/js/main.js"></script>
+    <script src="<?=base_url()?>asset/js/main.js"></script>
 
 </body>
 

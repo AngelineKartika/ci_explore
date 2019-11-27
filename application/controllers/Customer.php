@@ -17,6 +17,13 @@ class Customer extends CI_Controller{
 
     }
 
+    function dataCustTG(){
+      $data['pengguna'] = $this->M_Customer->tampilkanData2()->result();
+      
+      //$data['pengguna'] = $this->M_Customer->tampilkanData2()->result();
+      $this->load->view('V_Cust_Tg',$data);
+    }
+
 
     function tambahData()
     {

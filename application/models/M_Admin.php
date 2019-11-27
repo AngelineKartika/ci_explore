@@ -9,6 +9,8 @@ function tampilkanData(){
     FROM pengguna a WHERE a.status_pengguna='Admin'");
 }
 
+
+
 function insertTable($a,$b){
   $this->db->insert($a,$b);
 }

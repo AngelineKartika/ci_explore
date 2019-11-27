@@ -11,9 +11,12 @@ class Page extends CI_Controller{
   function index(){
     
       if($this->session->userdata('status_pengguna')==='Admin'){
-         $this->load->model('M_Admin');
-         $data['admin'] =  $this->M_Admin->tampilkanData()->result(); 
-         $this->load->view('V_Admin',$data);//blm diganti
+         $this->load->model('M_Pengguna');
+         $data['pengguna'] =  $this->M_Pengguna->hitungPengguna()->result();
+         $data['order'] =  $this->M_Pengguna->hitungOrder()->result();
+         $data['income']= $this->M_Pengguna->hitungIncome()->result();
+         $data['tour']= $this->M_Pengguna->hitungTour()->result();
+         $this->load->view('dashboard',$data);//blm diganti
       }
       else if($this->session->userdata('status_pengguna')==='Tourguide'){
         $this->load->model('M_Tour');
@@ -21,9 +24,9 @@ class Page extends CI_Controller{
         $this->load->view('V_Tour',$data);//blm diganti
      }
      else if($this->session->userdata('status_pengguna')==='Customer'){
-      $this->load->model('M_Customer');
-      $data['customer'] =  $this->M_Customer->tampilkanData()->result(); 
-      $this->load->view('V_Customer',$data);//blm diganti
+      $this->load->model('M_Order');
+      $data['order_cust']= $this->M_Order->tampilkanDataBelumCust()->result();
+        $this->load->view('V_Order_Cust',$data);
     }
       else{
           echo "Access Denied";

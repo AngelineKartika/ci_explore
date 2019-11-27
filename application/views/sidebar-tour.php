@@ -15,7 +15,7 @@
                 </li>
 
                 <li>
-                    <a href="<?=base_url()?>Order">
+                    <a href="<?=base_url()?>Customer/dataCustTG">
                         <i class="fas fa-calendar-alt"></i>My Customer</a>
                 </li>
 

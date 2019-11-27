@@ -251,6 +251,23 @@
                                               ?>
                                           </select>
                                       </div>
+
+                                      <div class="form-group">
+                                          <label for="company" class=" form-control-label">Tourguide</label>
+                                          <select name = "id_tg" class="form-control">
+                                          <?php
+                                                  foreach($pengguna as $p)
+                                                  {
+                                              ?>
+
+                                              <option value = "<?php echo $p->id_pengguna ?>" <?php echo ($a->id_tg == $p->id_pengguna) ? "selected" : "" ?>>
+                                                  <?php echo $p->nama_pengguna ?>
+                                              </option>
+                                              <?php
+                                                  }
+                                              ?>
+                                          </select>
+                                      </div>
                                       <button type="submit" class="btn btn-primary ">Submit</button> </a>
                                     </form>
 

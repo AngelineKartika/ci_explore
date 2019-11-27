@@ -13,6 +13,23 @@ function tampilkanData2(){
   WHERE a.status_pengguna='Tourguide'");
 }
 
+function hitungPengguna(){
+  return $this->db->query("SELECT COUNT(*) as total_pengguna FROM pengguna");
+}
+
+function hitungOrder(){
+  return $this->db->query("SELECT COUNT(*) as total_order FROM order_cust");
+}
+
+function hitungIncome(){
+  return $this->db->query("SELECT SUM(harga_promo) as total_income FROM order_cust");
+}
+
+function hitungTour(){
+  return $this->db->query("SELECT COUNT(*) as total_tour FROM tour");
+}
+
+
 
 function insertTable($a,$b){
   $this->db->insert($a,$b);
